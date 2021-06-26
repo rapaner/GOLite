@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<Database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="main" Class="Main" BaseType="DbLinq.Data.Linq.DataContext" Provider="Sqlite" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="main.Qualities" Member="Qualities">
+    <Type Name="Qualities">
+      <Association Name="fk_Qualities_0" Member="QualityGroups" Storage="_qualityGroups" Type="QualityGroups" ThisKey="QualityGroupID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="fk_TestQualities_0" Member="TestQualities" Storage="_testQualities" Type="TestQualities" ThisKey="ID" OtherKey="QualityID" DeleteRule="NO ACTION" />
+      <Column Name="BadQuality" Member="BadQuality" Storage="_badQuality" Type="System.String" DbType="text" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="GoodQuality" Member="GoodQuality" Storage="_goodQuality" Type="System.String" DbType="text" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="ID" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QualityGroupID" Member="QualityGroupID" Storage="_qualityGroupID" Type="System.Int32" DbType="INTEGER" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="Sort" Member="Sort" Storage="_sort" Type="System.Int32" DbType="INTEGER" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="main.QualityGroups" Member="QualityGroups">
+    <Type Name="QualityGroups">
+      <Association Name="fk_Qualities_0" Member="Qualities" Storage="_qualities" Type="Qualities" ThisKey="ID" OtherKey="QualityGroupID" DeleteRule="NO ACTION" />
+      <Association Name="fk_Tests_0" Member="Tests" Storage="_tests" Type="Tests" ThisKey="ID" OtherKey="QualityGroupID" DeleteRule="NO ACTION" />
+      <Column Name="ID" Member="ID" Storage="_id" Type="System.Int32" DbType="INTEGER" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Member="Name" Storage="_name" Type="System.String" DbType="TEXT" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="main.Scales" Member="Scales">
+    <Type Name="Scales">
+      <Association Name="fk_ScaleScores_0" Member="ScaleScores" Storage="_scaleScores" Type="ScaleScores" ThisKey="ID" OtherKey="ScaleID" DeleteRule="NO ACTION" />
+      <Association Name="fk_Tests_1" Member="Tests" Storage="_tests" Type="Tests" ThisKey="ID" OtherKey="ScaleID" DeleteRule="NO ACTION" />
+      <Column Name="ID" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Member="Name" Storage="_name" Type="System.String" DbType="text" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="main.ScaleScores" Member="ScaleScores">
+    <Type Name="ScaleScores">
+      <Association Name="fk_ScaleScores_0" Member="Scales" Storage="_scales" Type="Scales" ThisKey="ScaleID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="fk_TestResults_1" Member="TestResults" Storage="_testResults" Type="TestResults" ThisKey="ID" OtherKey="ScaleScoreID" DeleteRule="NO ACTION" />
+      <Column Name="ID" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ScaleID" Member="ScaleID" Storage="_scaleID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="Score" Member="Score" Storage="_score" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="Sort" Member="Sort" Storage="_sort" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="main.TestQualities" Member="TestQualities">
+    <Type Name="TestQualities">
+      <Association Name="fk_TestQualities_0" Member="Qualities" Storage="_qualities" Type="Qualities" ThisKey="QualityID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="fk_TestQualities_1" Member="Tests" Storage="_tests" Type="Tests" ThisKey="TestID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="fk_TestResults_2" Member="TestResults" Storage="_testResults" Type="TestResults" ThisKey="ID" OtherKey="TestQualityID" DeleteRule="NO ACTION" />
+      <Column Name="ID" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QualityID" Member="QualityID" Storage="_qualityID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="Sort" Member="Sort" Storage="_sort" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="TestID" Member="TestID" Storage="_testID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="main.TestResults" Member="TestResults">
+    <Type Name="TestResults">
+      <Association Name="fk_TestResults_0" Member="Tests" Storage="_tests" Type="Tests" ThisKey="TestID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="fk_TestResults_1" Member="ScaleScores" Storage="_scaleScores" Type="ScaleScores" ThisKey="ScaleScoreID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="fk_TestResults_2" Member="TestQualities" Storage="_testQualities" Type="TestQualities" ThisKey="TestQualityID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="fk_TestResults_3" Member="Users" Storage="_users" Type="Users" ThisKey="UserID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="fk_TestResults_4" Member="TestUsers" Storage="_testUsers" Type="TestUsers" ThisKey="TestUserID" OtherKey="ID" IsForeignKey="true" />
+      <Column Name="ID" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ScaleScoreID" Member="ScaleScoreID" Storage="_scaleScoreID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="TestID" Member="TestID" Storage="_testID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="TestQualityID" Member="TestQualityID" Storage="_testQualityID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="TestUserID" Member="TestUserID" Storage="_testUserID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="UserID" Member="UserID" Storage="_userID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="main.Tests" Member="Tests">
+    <Type Name="Tests">
+      <Association Name="fk_TestQualities_1" Member="TestQualities" Storage="_testQualities" Type="TestQualities" ThisKey="ID" OtherKey="TestID" DeleteRule="NO ACTION" />
+      <Association Name="fk_TestResults_0" Member="TestResults" Storage="_testResults" Type="TestResults" ThisKey="ID" OtherKey="TestID" DeleteRule="NO ACTION" />
+      <Association Name="fk_TestUsers_1" Member="TestUsers" Storage="_testUsers" Type="TestUsers" ThisKey="ID" OtherKey="TestID" DeleteRule="NO ACTION" />
+      <Association Name="fk_Tests_0" Member="QualityGroups" Storage="_qualityGroups" Type="QualityGroups" ThisKey="QualityGroupID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="fk_Tests_1" Member="Scales" Storage="_scales" Type="Scales" ThisKey="ScaleID" OtherKey="ID" IsForeignKey="true" />
+      <Column Name="DateCreated" Member="DateCreated" Storage="_dateCreated" Type="System.String" DbType="text" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="Description" Member="Description" Storage="_description" Type="System.String" DbType="TEXT" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="true" />
+      <Column Name="ID" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QualityGroupID" Member="QualityGroupID" Storage="_qualityGroupID" Type="System.Int32" DbType="INTEGER" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="ScaleID" Member="ScaleID" Storage="_scaleID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="TestName" Member="TestName" Storage="_testName" Type="System.String" DbType="text" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="main.TestUsers" Member="TestUsers">
+    <Type Name="TestUsers">
+      <Association Name="fk_TestResults_4" Member="TestResults" Storage="_testResults" Type="TestResults" ThisKey="ID" OtherKey="TestUserID" DeleteRule="NO ACTION" />
+      <Association Name="fk_TestUsers_0" Member="Users" Storage="_users" Type="Users" ThisKey="UserID" OtherKey="ID" IsForeignKey="true" />
+      <Association Name="fk_TestUsers_1" Member="Tests" Storage="_tests" Type="Tests" ThisKey="TestID" OtherKey="ID" IsForeignKey="true" />
+      <Column Name="ID" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Sort" Member="Sort" Storage="_sort" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="TestID" Member="TestID" Storage="_testID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+      <Column Name="UserID" Member="UserID" Storage="_userID" Type="System.Int32" DbType="integer" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="main.Users" Member="Users">
+    <Type Name="Users">
+      <Association Name="fk_TestResults_3" Member="TestResults" Storage="_testResults" Type="TestResults" ThisKey="ID" OtherKey="UserID" DeleteRule="NO ACTION" />
+      <Association Name="fk_TestUsers_0" Member="TestUsers" Storage="_testUsers" Type="TestUsers" ThisKey="ID" OtherKey="UserID" DeleteRule="NO ACTION" />
+      <Column Name="ID" Member="ID" Storage="_id" Type="System.Int32" DbType="integer" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Member="UserName" Storage="_userName" Type="System.String" DbType="text" IsPrimaryKey="false" IsDbGenerated="false" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
