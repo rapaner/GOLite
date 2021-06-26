@@ -13,11 +13,11 @@ namespace GOLite.Common
         {
             string mes = string.Empty;
             Exception exc = ex;
-            mes += exc.Message;
+            mes += $"{exc.Message}\nStack Trace: {exc.StackTrace}";
             while (exc.InnerException != null)
             {
                 exc = exc.InnerException;
-                mes += $"\n{exc.Message}";
+                mes += $"\n\n{exc.Message}\nStack Trace: {exc.StackTrace}";
             }
 
             return mes;

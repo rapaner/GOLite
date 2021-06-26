@@ -76,6 +76,7 @@ namespace GOLite.Views
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
+            this.colSort = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qualitiesBindingSource)).BeginInit();
@@ -227,6 +228,7 @@ namespace GOLite.Views
             // gvQualities
             // 
             this.gvQualities.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colSort,
             this.colNumeration,
             this.colGoodQuality,
             this.colBadQuality});
@@ -235,6 +237,8 @@ namespace GOLite.Views
             this.gvQualities.OptionsCustomization.AllowGroup = false;
             this.gvQualities.OptionsCustomization.AllowSort = false;
             this.gvQualities.OptionsView.ShowGroupPanel = false;
+            this.gvQualities.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSort, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colNumeration
             // 
@@ -548,6 +552,13 @@ namespace GOLite.Views
             this.bar3.StandaloneBarDockControl = this.standaloneBarDockControl2;
             this.bar3.Text = "Custom 3";
             // 
+            // colSort
+            // 
+            this.colSort.Caption = "Сортировка";
+            this.colSort.FieldName = "Sort";
+            this.colSort.Name = "colSort";
+            this.colSort.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
+            // 
             // QualitiesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -639,5 +650,6 @@ namespace GOLite.Views
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraGrid.Columns.GridColumn colNumeration;
+        private DevExpress.XtraGrid.Columns.GridColumn colSort;
     }
 }

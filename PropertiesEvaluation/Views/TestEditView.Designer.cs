@@ -68,6 +68,7 @@ namespace GOLite.Views
             this.gcTestUsers = new DevExpress.XtraGrid.GridControl();
             this.testUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvTestUsers = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colNumeration = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUserName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.standaloneBarDockControl2 = new DevExpress.XtraBars.StandaloneBarDockControl();
@@ -107,7 +108,6 @@ namespace GOLite.Views
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.testQualitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mvvmContext = new DevExpress.Utils.MVVM.MVVMContext(this.components);
-            this.colNumeration = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -198,7 +198,7 @@ namespace GOLite.Views
             // 
             // bbiCreateTestResults
             // 
-            this.bbiCreateTestResults.Caption = "Создать список для оценивания";
+            this.bbiCreateTestResults.Caption = "Таблица для ввода данных";
             this.bbiCreateTestResults.Id = 2;
             this.bbiCreateTestResults.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiCreateTestResults.ImageOptions.Image")));
             this.bbiCreateTestResults.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiCreateTestResults.ImageOptions.LargeImage")));
@@ -206,7 +206,7 @@ namespace GOLite.Views
             // 
             // bbiShowDocument
             // 
-            this.bbiShowDocument.Caption = "Таблица для ввода данных";
+            this.bbiShowDocument.Caption = "Набор для раздачи участникам";
             this.bbiShowDocument.Id = 3;
             this.bbiShowDocument.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiShowDocument.ImageOptions.Image")));
             this.bbiShowDocument.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiShowDocument.ImageOptions.LargeImage")));
@@ -542,6 +542,16 @@ namespace GOLite.Views
             this.gvTestUsers.OptionsView.ShowGroupPanel = false;
             this.gvTestUsers.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSort, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colNumeration
+            // 
+            this.colNumeration.Caption = "№";
+            this.colNumeration.FieldName = "colNumeration";
+            this.colNumeration.Name = "colNumeration";
+            this.colNumeration.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colNumeration.Visible = true;
+            this.colNumeration.VisibleIndex = 0;
+            this.colNumeration.Width = 30;
             // 
             // colSort
             // 
@@ -924,16 +934,6 @@ namespace GOLite.Views
             // mvvmContext
             // 
             this.mvvmContext.ContainerControl = this;
-            // 
-            // colNumeration
-            // 
-            this.colNumeration.Caption = "№";
-            this.colNumeration.FieldName = "colNumeration";
-            this.colNumeration.Name = "colNumeration";
-            this.colNumeration.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.colNumeration.Visible = true;
-            this.colNumeration.VisibleIndex = 0;
-            this.colNumeration.Width = 30;
             // 
             // TestEditView
             // 

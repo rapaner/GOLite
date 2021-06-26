@@ -210,6 +210,10 @@ namespace GOLite.ViewModels
                 return;
             qualityForChange.Sort += 1;
             CurrentQuality.Sort -= 1;
+
+            this.RaiseCanExecuteChanged(vm => vm.UpQuality());
+            this.RaiseCanExecuteChanged(vm => vm.DownQuality());
+            this.RaisePropertiesChanged();
         }
 
         /// <summary>
@@ -231,6 +235,10 @@ namespace GOLite.ViewModels
                 return;
             qualityForChange.Sort -= 1;
             CurrentQuality.Sort += 1;
+
+            this.RaiseCanExecuteChanged(vm => vm.UpQuality());
+            this.RaiseCanExecuteChanged(vm => vm.DownQuality());
+            this.RaisePropertiesChanged();
         }
 
         /// <summary>

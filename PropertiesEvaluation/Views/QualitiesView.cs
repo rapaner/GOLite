@@ -74,7 +74,7 @@ namespace GOLite.Views
                     gvQualityGroups.CloseEditor();
                     gvQualities.CloseEditor();
                 });
-            fluentAPI.WithCommand(vm => vm.DeleteQuality())
+            fluentAPI.WithCommand(vm => vm.DownQuality())
                 .Before(() =>
                 {
                     gvQualityGroups.CloseEditor();
