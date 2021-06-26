@@ -41,64 +41,65 @@ namespace GOLite.Views
             this.mvvmContext = new DevExpress.Utils.MVVM.MVVMContext(this.components);
             this.qualitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.qualityGroupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.gcQualityGroups = new DevExpress.XtraGrid.GridControl();
-            this.gvQualityGroups = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.gcQualities = new DevExpress.XtraGrid.GridControl();
+            this.gvQualities = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colNumeration = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGoodQuality = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBadQuality = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.standaloneBarDockControl4 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiAddGroup = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDeleteGroup = new DevExpress.XtraBars.BarButtonItem();
             this.standaloneBarDockControl2 = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.standaloneBarDockControl4 = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.bar4 = new DevExpress.XtraBars.Bar();
-            this.gcQualities = new DevExpress.XtraGrid.GridControl();
-            this.gvQualities = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colGoodQuality = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBadQuality = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bbiAddQuality = new DevExpress.XtraBars.BarButtonItem();
             this.bbiUpQuality = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDownQuality = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDeleteQuality = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.gcQualityGroups = new DevExpress.XtraGrid.GridControl();
+            this.qualityGroupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gvQualityGroups = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bar3 = new DevExpress.XtraBars.Bar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qualitiesBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qualityGroupsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcQualityGroups)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvQualityGroups)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcQualities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvQualities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcQualityGroups)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qualityGroupsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvQualityGroups)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -189,82 +190,87 @@ namespace GOLite.Views
             this.tableLayoutPanel1.Size = new System.Drawing.Size(705, 417);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // qualityGroupsBindingSource
+            // groupControl2
             // 
-            this.qualityGroupsBindingSource.DataSource = typeof(GOLite.Entities.QualityGroup);
+            this.groupControl2.Controls.Add(this.layoutControl2);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(355, 3);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(347, 411);
+            this.groupControl2.TabIndex = 10;
+            this.groupControl2.Text = "Баллы шкалы";
             // 
-            // groupControl1
+            // layoutControl2
             // 
-            this.groupControl1.Controls.Add(this.layoutControl1);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 3);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(346, 411);
-            this.groupControl1.TabIndex = 8;
-            this.groupControl1.Text = "Группы";
+            this.layoutControl2.Controls.Add(this.gcQualities);
+            this.layoutControl2.Controls.Add(this.standaloneBarDockControl4);
+            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl2.Location = new System.Drawing.Point(2, 20);
+            this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.Root = this.layoutControlGroup2;
+            this.layoutControl2.Size = new System.Drawing.Size(343, 389);
+            this.layoutControl2.TabIndex = 0;
+            this.layoutControl2.Text = "layoutControl2";
             // 
-            // layoutControl1
+            // gcQualities
             // 
-            this.layoutControl1.Controls.Add(this.gcQualityGroups);
-            this.layoutControl1.Controls.Add(this.standaloneBarDockControl2);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(2, 20);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(342, 389);
-            this.layoutControl1.TabIndex = 0;
-            this.layoutControl1.Text = "layoutControl1";
+            this.gcQualities.DataSource = this.qualitiesBindingSource;
+            this.gcQualities.Location = new System.Drawing.Point(5, 40);
+            this.gcQualities.MainView = this.gvQualities;
+            this.gcQualities.MenuManager = this.ribbon;
+            this.gcQualities.Name = "gcQualities";
+            this.gcQualities.Size = new System.Drawing.Size(333, 344);
+            this.gcQualities.TabIndex = 0;
+            this.gcQualities.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvQualities});
             // 
-            // layoutControlGroup1
+            // gvQualities
             // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2,
-            this.layoutControlItem3});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(342, 389);
-            this.layoutControlGroup1.TextVisible = false;
+            this.gvQualities.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colNumeration,
+            this.colGoodQuality,
+            this.colBadQuality});
+            this.gvQualities.GridControl = this.gcQualities;
+            this.gvQualities.Name = "gvQualities";
+            this.gvQualities.OptionsCustomization.AllowGroup = false;
+            this.gvQualities.OptionsCustomization.AllowSort = false;
+            this.gvQualities.OptionsView.ShowGroupPanel = false;
             // 
-            // gcQualityGroups
+            // colNumeration
             // 
-            this.gcQualityGroups.DataSource = this.qualityGroupsBindingSource;
-            this.gcQualityGroups.Location = new System.Drawing.Point(5, 40);
-            this.gcQualityGroups.MainView = this.gvQualityGroups;
-            this.gcQualityGroups.MenuManager = this.ribbon;
-            this.gcQualityGroups.Name = "gcQualityGroups";
-            this.gcQualityGroups.Size = new System.Drawing.Size(332, 344);
-            this.gcQualityGroups.TabIndex = 0;
-            this.gcQualityGroups.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvQualityGroups});
+            this.colNumeration.Caption = "№";
+            this.colNumeration.FieldName = "colNumeration";
+            this.colNumeration.Name = "colNumeration";
+            this.colNumeration.OptionsColumn.AllowEdit = false;
+            this.colNumeration.OptionsColumn.ReadOnly = true;
+            this.colNumeration.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colNumeration.Visible = true;
+            this.colNumeration.VisibleIndex = 0;
             // 
-            // gvQualityGroups
+            // colGoodQuality
             // 
-            this.gvQualityGroups.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colName});
-            this.gvQualityGroups.GridControl = this.gcQualityGroups;
-            this.gvQualityGroups.Name = "gvQualityGroups";
-            this.gvQualityGroups.OptionsCustomization.AllowGroup = false;
-            this.gvQualityGroups.OptionsDetail.EnableMasterViewMode = false;
-            this.gvQualityGroups.OptionsView.ShowGroupPanel = false;
+            this.colGoodQuality.Caption = "Положительное";
+            this.colGoodQuality.FieldName = "GoodQuality";
+            this.colGoodQuality.Name = "colGoodQuality";
+            this.colGoodQuality.Visible = true;
+            this.colGoodQuality.VisibleIndex = 1;
             // 
-            // colName
+            // colBadQuality
             // 
-            this.colName.Caption = "Название";
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
+            this.colBadQuality.Caption = "Отрицательное";
+            this.colBadQuality.FieldName = "BadQuality";
+            this.colBadQuality.Name = "colBadQuality";
+            this.colBadQuality.Visible = true;
+            this.colBadQuality.VisibleIndex = 2;
             // 
-            // layoutControlItem2
+            // standaloneBarDockControl4
             // 
-            this.layoutControlItem2.Control = this.gcQualityGroups;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 35);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(336, 348);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
+            this.standaloneBarDockControl4.CausesValidation = false;
+            this.standaloneBarDockControl4.Location = new System.Drawing.Point(5, 5);
+            this.standaloneBarDockControl4.Manager = this.barManager1;
+            this.standaloneBarDockControl4.Name = "standaloneBarDockControl4";
+            this.standaloneBarDockControl4.Size = new System.Drawing.Size(333, 31);
+            this.standaloneBarDockControl4.Text = "standaloneBarDockControl4";
             // 
             // barManager1
             // 
@@ -308,16 +314,16 @@ namespace GOLite.Views
             // 
             this.bbiAddGroup.Caption = "Добавить";
             this.bbiAddGroup.Id = 0;
-            this.bbiAddGroup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiAddScale.ImageOptions.Image")));
-            this.bbiAddGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiAddScale.ImageOptions.LargeImage")));
+            this.bbiAddGroup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiAddGroup.ImageOptions.Image")));
+            this.bbiAddGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiAddGroup.ImageOptions.LargeImage")));
             this.bbiAddGroup.Name = "bbiAddGroup";
             // 
             // bbiDeleteGroup
             // 
             this.bbiDeleteGroup.Caption = "Удалить шкалу";
             this.bbiDeleteGroup.Id = 1;
-            this.bbiDeleteGroup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiDeleteScale.ImageOptions.Image")));
-            this.bbiDeleteGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiDeleteScale.ImageOptions.LargeImage")));
+            this.bbiDeleteGroup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiDeleteGroup.ImageOptions.Image")));
+            this.bbiDeleteGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiDeleteGroup.ImageOptions.LargeImage")));
             this.bbiDeleteGroup.Name = "bbiDeleteGroup";
             // 
             // standaloneBarDockControl2
@@ -328,112 +334,6 @@ namespace GOLite.Views
             this.standaloneBarDockControl2.Name = "standaloneBarDockControl2";
             this.standaloneBarDockControl2.Size = new System.Drawing.Size(332, 31);
             this.standaloneBarDockControl2.Text = "standaloneBarDockControl2";
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 143);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(705, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 560);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(705, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 143);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 417);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(705, 143);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 417);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.standaloneBarDockControl2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(336, 35);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.layoutControl2);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(355, 3);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(347, 411);
-            this.groupControl2.TabIndex = 10;
-            this.groupControl2.Text = "Баллы шкалы";
-            // 
-            // layoutControl2
-            // 
-            this.layoutControl2.Controls.Add(this.gcQualities);
-            this.layoutControl2.Controls.Add(this.standaloneBarDockControl4);
-            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(2, 20);
-            this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(343, 389);
-            this.layoutControl2.TabIndex = 0;
-            this.layoutControl2.Text = "layoutControl2";
-            // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup2.GroupBordersVisible = false;
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem5});
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(343, 389);
-            this.layoutControlGroup2.TextVisible = false;
-            // 
-            // standaloneBarDockControl4
-            // 
-            this.standaloneBarDockControl4.CausesValidation = false;
-            this.standaloneBarDockControl4.Location = new System.Drawing.Point(5, 5);
-            this.standaloneBarDockControl4.Manager = this.barManager1;
-            this.standaloneBarDockControl4.Name = "standaloneBarDockControl4";
-            this.standaloneBarDockControl4.Size = new System.Drawing.Size(333, 31);
-            this.standaloneBarDockControl4.Text = "standaloneBarDockControl4";
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.standaloneBarDockControl4;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(337, 35);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
-            // 
-            // bar3
-            // 
-            this.bar3.BarName = "Custom 3";
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.bar3.FloatLocation = new System.Drawing.Point(459, 291);
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.StandaloneBarDockControl = this.standaloneBarDockControl2;
-            this.bar3.Text = "Custom 3";
             // 
             // bar4
             // 
@@ -453,53 +353,6 @@ namespace GOLite.Views
             this.bar4.OptionsBar.UseWholeRow = true;
             this.bar4.StandaloneBarDockControl = this.standaloneBarDockControl4;
             this.bar4.Text = "Custom 4";
-            // 
-            // gcQualities
-            // 
-            this.gcQualities.DataSource = this.qualitiesBindingSource;
-            this.gcQualities.Location = new System.Drawing.Point(5, 40);
-            this.gcQualities.MainView = this.gvQualities;
-            this.gcQualities.MenuManager = this.ribbon;
-            this.gcQualities.Name = "gcQualities";
-            this.gcQualities.Size = new System.Drawing.Size(333, 344);
-            this.gcQualities.TabIndex = 0;
-            this.gcQualities.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvQualities});
-            // 
-            // gvQualities
-            // 
-            this.gvQualities.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colGoodQuality,
-            this.colBadQuality});
-            this.gvQualities.GridControl = this.gcQualities;
-            this.gvQualities.Name = "gvQualities";
-            this.gvQualities.OptionsCustomization.AllowGroup = false;
-            this.gvQualities.OptionsView.ShowGroupPanel = false;
-            // 
-            // colGoodQuality
-            // 
-            this.colGoodQuality.Caption = "Положительное";
-            this.colGoodQuality.FieldName = "GoodQuality";
-            this.colGoodQuality.Name = "colGoodQuality";
-            this.colGoodQuality.Visible = true;
-            this.colGoodQuality.VisibleIndex = 0;
-            // 
-            // colBadQuality
-            // 
-            this.colBadQuality.Caption = "Отрицательное";
-            this.colBadQuality.FieldName = "BadQuality";
-            this.colBadQuality.Name = "colBadQuality";
-            this.colBadQuality.Visible = true;
-            this.colBadQuality.VisibleIndex = 1;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.gcQualities;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 35);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(337, 348);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
             // 
             // bbiAddQuality
             // 
@@ -525,13 +378,175 @@ namespace GOLite.Views
             this.bbiDownQuality.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiDownQuality.ImageOptions.LargeImage")));
             this.bbiDownQuality.Name = "bbiDownQuality";
             // 
-            // bbiRemoveQuality
+            // bbiDeleteQuality
             // 
             this.bbiDeleteQuality.Caption = "Удалить";
             this.bbiDeleteQuality.Id = 9;
-            this.bbiDeleteQuality.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiRemoveQuality.ImageOptions.Image")));
-            this.bbiDeleteQuality.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiRemoveQuality.ImageOptions.LargeImage")));
-            this.bbiDeleteQuality.Name = "bbiRemoveQuality";
+            this.bbiDeleteQuality.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiDeleteQuality.ImageOptions.Image")));
+            this.bbiDeleteQuality.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiDeleteQuality.ImageOptions.LargeImage")));
+            this.bbiDeleteQuality.Name = "bbiDeleteQuality";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(705, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 560);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(705, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 560);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(705, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 560);
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem5});
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(343, 389);
+            this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gcQualities;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 35);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(337, 348);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.standaloneBarDockControl4;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(337, 35);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.layoutControl1);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(346, 411);
+            this.groupControl1.TabIndex = 8;
+            this.groupControl1.Text = "Группы";
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.gcQualityGroups);
+            this.layoutControl1.Controls.Add(this.standaloneBarDockControl2);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(2, 20);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(342, 389);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // gcQualityGroups
+            // 
+            this.gcQualityGroups.DataSource = this.qualityGroupsBindingSource;
+            this.gcQualityGroups.Location = new System.Drawing.Point(5, 40);
+            this.gcQualityGroups.MainView = this.gvQualityGroups;
+            this.gcQualityGroups.MenuManager = this.ribbon;
+            this.gcQualityGroups.Name = "gcQualityGroups";
+            this.gcQualityGroups.Size = new System.Drawing.Size(332, 344);
+            this.gcQualityGroups.TabIndex = 0;
+            this.gcQualityGroups.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvQualityGroups});
+            // 
+            // qualityGroupsBindingSource
+            // 
+            this.qualityGroupsBindingSource.DataSource = typeof(GOLite.Entities.QualityGroup);
+            // 
+            // gvQualityGroups
+            // 
+            this.gvQualityGroups.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colName});
+            this.gvQualityGroups.GridControl = this.gcQualityGroups;
+            this.gvQualityGroups.Name = "gvQualityGroups";
+            this.gvQualityGroups.OptionsCustomization.AllowGroup = false;
+            this.gvQualityGroups.OptionsCustomization.AllowSort = false;
+            this.gvQualityGroups.OptionsDetail.EnableMasterViewMode = false;
+            this.gvQualityGroups.OptionsView.ShowGroupPanel = false;
+            // 
+            // colName
+            // 
+            this.colName.Caption = "Название";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2,
+            this.layoutControlItem3});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(342, 389);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.gcQualityGroups;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 35);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(336, 348);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.standaloneBarDockControl2;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(336, 35);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Custom 3";
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar3.FloatLocation = new System.Drawing.Point(459, 291);
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.StandaloneBarDockControl = this.standaloneBarDockControl2;
+            this.bar3.Text = "Custom 3";
             // 
             // QualitiesView
             // 
@@ -539,12 +554,12 @@ namespace GOLite.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 560);
             this.ControlBox = false;
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.ribbon);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.ribbon);
             this.Name = "QualitiesView";
             this.Ribbon = this.ribbon;
             this.Text = "QualitiesView";
@@ -552,26 +567,26 @@ namespace GOLite.Views
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qualitiesBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.qualityGroupsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcQualityGroups)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvQualityGroups)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcQualities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvQualities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcQualityGroups)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qualityGroupsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvQualityGroups)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -623,5 +638,6 @@ namespace GOLite.Views
         private DevExpress.XtraGrid.Columns.GridColumn colBadQuality;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraGrid.Columns.GridColumn colNumeration;
     }
 }

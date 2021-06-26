@@ -3,13 +3,13 @@ using System.Threading.Tasks;
 
 namespace GOLite.Services
 {
-
     /// <summary>
     /// Интерфейс формы-ожидания с автоматическим закрытием
     /// </summary>
     public interface IWaitFormService
     {
         #region Методы
+
         /// <summary>
         /// Открывает форму-ожидание, выполняет действие и закрывает форму по завершении
         /// </summary>
@@ -39,6 +39,7 @@ namespace GOLite.Services
         /// Открывает форму-ожидание, выполняет асинхронные задачи и закрывается по завершении
         /// </summary>
         Task ShowAsync(string caption, string description, params Task[] taskArray);
+
         #endregion Методы
     }
 }

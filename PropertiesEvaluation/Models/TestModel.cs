@@ -1,10 +1,7 @@
 ﻿using GOLite.Common;
 using GOLite.Entities;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 
 namespace GOLite.Models
 {
@@ -14,6 +11,7 @@ namespace GOLite.Models
     public class TestModel : BaseValidation
     {
         #region Свойства
+
         /// <summary>
         /// Тест
         /// </summary>
@@ -23,9 +21,11 @@ namespace GOLite.Models
         /// Шкалы
         /// </summary>
         public ObservableCollection<Scale> Scales { get; set; } = new ObservableCollection<Scale>();
-        #endregion
+
+        #endregion Свойства
 
         #region Методы
+
         /// <summary>
         /// Валидация
         /// </summary>
@@ -55,8 +55,8 @@ namespace GOLite.Models
                     AddError($"Есть качества, указанные дважды! Необходимо устранить дубли.");
                 }
             }
-
         }
-        #endregion
+
+        #endregion Методы
     }
 }

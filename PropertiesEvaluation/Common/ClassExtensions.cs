@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace GOLite.Common
 {
@@ -33,7 +31,7 @@ namespace GOLite.Common
         {
             var dateParts = dateString
                 .Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(x=> int.Parse(x))
+                .Select(x => int.Parse(x))
                 .ToArray();
             return new DateTime(dateParts[2], dateParts[1], dateParts[0]);
         }

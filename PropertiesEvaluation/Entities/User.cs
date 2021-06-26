@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace GOLite.Entities
 {
@@ -16,6 +12,7 @@ namespace GOLite.Entities
         /// Начальное ФИО
         /// </summary>
         private string _userName;
+
         private int userID;
         private string userName;
 

@@ -13,6 +13,7 @@ namespace GOLite.ViewModels
     public class UsersViewModel : CommonViewModel
     {
         #region Свойства
+
         /// <summary>
         /// Модель с участниками
         /// </summary>
@@ -32,9 +33,11 @@ namespace GOLite.ViewModels
         /// Обновить участников
         /// </summary>
         public virtual bool RefreshUsersTrigger { get; set; }
-        #endregion
+
+        #endregion Свойства
 
         #region Методы
+
         /// <summary>
         /// Получить список участников
         /// </summary>
@@ -136,6 +139,7 @@ namespace GOLite.ViewModels
         {
             CurrentUser = user;
         }
-        #endregion
+
+        #endregion Методы
     }
 }

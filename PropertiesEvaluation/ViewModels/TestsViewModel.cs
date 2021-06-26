@@ -3,10 +3,8 @@ using DevExpress.Mvvm.POCO;
 using GOLite.Common;
 using GOLite.Entities;
 using GOLite.Enums;
-using GOLite.Models;
 using System;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace GOLite.ViewModels
@@ -14,6 +12,7 @@ namespace GOLite.ViewModels
     public class TestsViewModel : CommonViewModel
     {
         #region Конструкторы
+
         public TestsViewModel()
         {
             Messenger.Default.Register<enMessage>(this, "TestsView", x => ReceiveMessage(x));
@@ -41,9 +40,11 @@ namespace GOLite.ViewModels
                     break;
             }
         }
-        #endregion
+
+        #endregion Конструкторы
 
         #region Свойства
+
         /// <summary>
         /// Тесты
         /// </summary>
@@ -61,9 +62,11 @@ namespace GOLite.ViewModels
         {
             this.RaiseCanExecuteChanged(vm => vm.OpenTest());
         }
-        #endregion
+
+        #endregion Свойства
 
         #region Методы
+
         /// <summary>
         /// Получить список тестов
         /// </summary>
@@ -115,6 +118,7 @@ namespace GOLite.ViewModels
         {
             CurrentTest = test;
         }
-        #endregion
+
+        #endregion Методы
     }
 }

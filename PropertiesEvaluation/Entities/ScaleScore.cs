@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace GOLite.Entities
 {
@@ -21,6 +17,7 @@ namespace GOLite.Entities
         /// Начальная сортировка
         /// </summary>
         private int _sort;
+
         private int scaleScoreID;
         private int? score;
         private int sort;

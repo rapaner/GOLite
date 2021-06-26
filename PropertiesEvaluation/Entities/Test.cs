@@ -12,6 +12,7 @@ namespace GOLite.Entities
     public class Test : INotifyPropertyChanged
     {
         #region Поля
+
         /// <summary>
         /// Начальная шкала
         /// </summary>
@@ -42,9 +43,11 @@ namespace GOLite.Entities
         private DateTime dateCreated;
         private string description;
         private int qualityGroupID;
-        #endregion
+
+        #endregion Поля
 
         #region Конструкторы
+
         public Test()
         {
             DateCreated = DateTime.Now;
@@ -77,11 +80,12 @@ namespace GOLite.Entities
             _testName = testName;
             _dateCreated = dateCreated;
             _description = description;
-
         }
-        #endregion
+
+        #endregion Конструкторы
 
         #region Свойства
+
         /// <summary>
         /// Код теста
         /// </summary>
@@ -197,7 +201,6 @@ namespace GOLite.Entities
             || DateCreated != _dateCreated
             || Description != _description;
 
-
         /// <summary>
         /// Есть изменения
         /// </summary>
@@ -217,7 +220,8 @@ namespace GOLite.Entities
         /// </summary>
         public bool IsQualityGroupChanged =>
             QualityGroupID != _qualityGroupID;
-        #endregion
+
+        #endregion Свойства
 
         public event PropertyChangedEventHandler PropertyChanged;
 

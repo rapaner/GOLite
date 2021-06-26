@@ -5,11 +5,9 @@ using DevExpress.XtraReports.UI;
 using GOLite.Entities;
 using GOLite.Reports;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GOLite.Common
@@ -333,6 +331,7 @@ namespace GOLite.Common
             report.CreateDocument();
 
             #region Создание новых пользователей с результатами, которые содержат оценку самого пользователя, а не как оценивал он
+
             ObservableCollection<UserWithTestResults> usersWithResults = new ObservableCollection<UserWithTestResults>();
             foreach (var tu in test.TestUsers.OrderBy(x => x.Sort))
             {
@@ -347,7 +346,8 @@ namespace GOLite.Common
                 }
                 usersWithResults.Add(newUser);
             }
-            #endregion
+
+            #endregion Создание новых пользователей с результатами, которые содержат оценку самого пользователя, а не как оценивал он
 
             //foreach (var uwr in test.UsersWithResults)
             int count = 1;

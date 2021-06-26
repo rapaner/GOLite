@@ -1,6 +1,5 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.POCO;
-using DevExpress.XtraReports.UI;
 using GOLite.Common;
 using GOLite.Entities;
 using GOLite.Entities.Messages;
@@ -9,7 +8,6 @@ using GOLite.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace GOLite.ViewModels
@@ -20,6 +18,7 @@ namespace GOLite.ViewModels
     public class TestEditViewModel : CommonViewModel
     {
         #region Свойства
+
         /// <summary>
         /// Модель
         /// </summary>
@@ -94,9 +93,11 @@ namespace GOLite.ViewModels
         /// Строка с результатами
         /// </summary>
         public virtual string ResultsLine { get; set; }
-        #endregion
+
+        #endregion Свойства
 
         #region Методы
+
         /// <summary>
         /// Действия после загрузки данных для модели
         /// </summary>
@@ -159,7 +160,7 @@ namespace GOLite.ViewModels
             {
                 int testID = await WaitFormService.ShowAsync(DataSourceProvider.Instance.SaveNewTestAsync(Model.Test));
                 Model.Test.TestID = testID;
-                Messenger.Default.Send(enMessage.RefreshTests, "TestView");
+                Messenger.Default.Send(enMessage.RefreshTests, "TestsView");
                 await WaitFormService.ShowAsync(GetTestAsync());
                 RefreshTestToken = !RefreshTestToken;
                 if (showMessage)
@@ -287,7 +288,7 @@ namespace GOLite.ViewModels
         }
 
         /// <summary>
-        /// Создание отчета итоговых результатов 
+        /// Создание отчета итоговых результатов
         /// </summary>
         public Task CreateFinalTestResults()
         {
@@ -295,7 +296,7 @@ namespace GOLite.ViewModels
         }
 
         /// <summary>
-        /// Создание отчета итоговых результатов 
+        /// Создание отчета итоговых результатов
         /// </summary>
         private async Task CreateFinalTestResultsAsync()
         {
@@ -360,6 +361,7 @@ namespace GOLite.ViewModels
         }
 
         #region Управление участниками
+
         /// <summary>
         /// Добавить участника
         /// </summary>
@@ -392,7 +394,7 @@ namespace GOLite.ViewModels
         /// </summary>
         public bool CanDownUser() =>
             CurrentTestUser != null
-            && CurrentTestUser.Sort < Model.Test.TestUsers.Count - 1;
+            && CurrentTestUser.Sort < Model.Test.TestUsers.Count;
 
         /// <summary>
         /// Опустить пользователя
@@ -416,9 +418,11 @@ namespace GOLite.ViewModels
         {
             CurrentTestUser.ForDelete = !CurrentTestUser.ForDelete;
         }
-        #endregion
+
+        #endregion Управление участниками
 
         #region Управление качествами
+
         /// <summary>
         /// Добавить качество
         /// </summary>
@@ -475,7 +479,8 @@ namespace GOLite.ViewModels
         {
             CurrentTestQuality.ForDelete = !CurrentTestQuality.ForDelete;
         }
-        #endregion
+
+        #endregion Управление качествами
 
         /// <summary>
         /// Пачечная вставка результатов
@@ -544,6 +549,7 @@ namespace GOLite.ViewModels
 
             CloseTestEditView(Model.Test.TestID);
         }
-        #endregion
+
+        #endregion Методы
     }
 }

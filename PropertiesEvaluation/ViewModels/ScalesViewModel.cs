@@ -13,6 +13,7 @@ namespace GOLite.ViewModels
     public class ScalesViewModel : CommonViewModel
     {
         #region Свойства
+
         /// <summary>
         /// Модель с качествами
         /// </summary>
@@ -45,9 +46,11 @@ namespace GOLite.ViewModels
         /// Обновить качества
         /// </summary>
         public virtual bool RefreshScalesTrigger { get; set; }
-        #endregion
+
+        #endregion Свойства
 
         #region Методы
+
         /// <summary>
         /// Получить список шкал
         /// </summary>
@@ -250,6 +253,7 @@ namespace GOLite.ViewModels
             }
             CloseScalesView();
         }
-        #endregion
+
+        #endregion Методы
     }
 }

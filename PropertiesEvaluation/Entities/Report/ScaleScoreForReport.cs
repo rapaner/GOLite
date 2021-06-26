@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace GOLite.Entities
+﻿namespace GOLite.Entities
 {
     /// <summary>
     /// Оценка шкалы для отчета

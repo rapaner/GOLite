@@ -1,14 +1,10 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.POCO;
 using DevExpress.Mvvm.ViewModel;
-using DevExpress.Utils.MVVM.Services;
-using GOLite.Entities;
 using GOLite.Services;
 using GOLite.ViewModels;
 using System;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Security.Principal;
 using System.Threading.Tasks;
 
 namespace GOLite.Common
@@ -16,6 +12,7 @@ namespace GOLite.Common
     public class CommonViewModel
     {
         #region Сервисы
+
         /// <summary>
         /// Сервис отображения окна загрузки/ожидания
         /// </summary>
@@ -35,9 +32,11 @@ namespace GOLite.Common
         /// Сервис сохранения файлов
         /// </summary>
         public ISaveFileDialogService SaveFileDialogService => this.GetService<ISaveFileDialogService>();
-        #endregion
+
+        #endregion Сервисы
 
         #region Методы
+
         /// <summary>
         /// Создание базы данных
         /// </summary>
@@ -45,10 +44,13 @@ namespace GOLite.Common
         {
             Task.Factory.StartNew(() => DataSourceProvider.Instance.CreateDataBase());
         }
-        #endregion
+
+        #endregion Методы
 
         #region Запуск модулей
+
         #region QualitiesView
+
         /// <summary>
         /// Открыть модуль просмотра качеств
         /// </summary>
@@ -101,9 +103,11 @@ namespace GOLite.Common
                 document.Close();
             }
         }
-        #endregion
+
+        #endregion QualitiesView
 
         #region ScalesView
+
         /// <summary>
         /// Открыть модуль просмотра качеств
         /// </summary>
@@ -156,9 +160,11 @@ namespace GOLite.Common
                 document.Close();
             }
         }
-        #endregion
+
+        #endregion ScalesView
 
         #region UsersView
+
         /// <summary>
         /// Открыть модуль просмотра участников
         /// </summary>
@@ -211,9 +217,11 @@ namespace GOLite.Common
                 document.Close();
             }
         }
-        #endregion
+
+        #endregion UsersView
 
         #region TestsView
+
         /// <summary>
         /// Открыть модуль списка тестов
         /// </summary>
@@ -266,9 +274,11 @@ namespace GOLite.Common
                 document.Close();
             }
         }
-        #endregion
+
+        #endregion TestsView
 
         #region TestEditView
+
         /// <summary>
         /// Открыть модуль просмотра теста
         /// </summary>
@@ -347,7 +357,9 @@ namespace GOLite.Common
                 document.Close();
             }
         }
-        #endregion
-        #endregion
+
+        #endregion TestEditView
+
+        #endregion Запуск модулей
     }
 }

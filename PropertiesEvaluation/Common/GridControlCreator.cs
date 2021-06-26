@@ -6,12 +6,9 @@ using DevExpress.XtraGrid.Views.Grid;
 using GOLite.Entities;
 using GOLite.Entities.Messages;
 using GOLite.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace GOLite.Common
@@ -206,6 +203,7 @@ namespace GOLite.Common
 
             return gc;
         }
+
         public GridControl CreateTestResultsGridControl(UserWithTestResults user, Test test, ObservableCollection<ScaleScore> scaleScores)
         {
             ObservableCollection<TestUser> testUsers = test.TestUsers;

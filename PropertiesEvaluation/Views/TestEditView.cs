@@ -1,10 +1,8 @@
 ﻿using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid;
 using GOLite.Common;
 using GOLite.Entities;
 using GOLite.ViewModels;
-using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -14,13 +12,16 @@ namespace GOLite.Views
     public partial class TestEditView : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         #region Свойства
+
         public T GetDataContext<T>() => mvvmContext.GetViewModel<T>();
 
         /// <summary>
         /// GridControl результатов
         /// </summary>
         protected GridControl TestResultsGridControl { get; set; }
-        #endregion
+
+        #endregion Свойства
+
         public TestEditView()
         {
             InitializeComponent();
@@ -35,10 +36,7 @@ namespace GOLite.Views
                     InitializeBindings();
                 }
             };
-
-
         }
-
 
         private void InitializeBindings()
         {
@@ -62,7 +60,9 @@ namespace GOLite.Views
             fluentAPI.BindCommand(btnInsertResults, vm => vm.BulkInsertResults());
 
             //  Триггеры
+
             #region Триггеры до
+
             fluentAPI.WithCommand(vm => vm.SaveTest(true))
                 .Before(() =>
                 {
@@ -101,9 +101,11 @@ namespace GOLite.Views
                 {
                     gvTestUsers.CloseEditor();
                 });
-            #endregion
+
+            #endregion Триггеры до
 
             #region Триггеры после
+
             fluentAPI.WithCommand(vm => vm.AddUser())
                 .After(() =>
                 {
@@ -125,7 +127,8 @@ namespace GOLite.Views
                 {
                     gvTestUsers.RefreshData();
                 });
-            #endregion
+
+            #endregion Триггеры после
 
             //  Триггер
             fluentAPI.SetTrigger(vm => vm.RefreshTestToken, (x) =>
@@ -139,7 +142,6 @@ namespace GOLite.Views
               {
                   TestResultsGridControl = CreateResultsGridControl();
               });
-
 
             //  Изменения выбранных строк
             fluentAPI.EventToCommand<FocusedRowObjectChangedEventArgs>(gvTestUsers, "FocusedRowObjectChanged", vm => vm.ChangeCurrentTestUser(null), args =>
@@ -178,6 +180,14 @@ namespace GOLite.Views
                     return;
                 if (gvTestUsers.GetRow(e.RowHandle) is TestUser at && at.ForDelete)
                     e.Appearance.FontStyleDelta = FontStyle.Strikeout;
+            };
+
+            gvTestUsers.CustomDrawCell += (o, e) =>
+            {
+                if (e.Column == colNumeration)
+                {
+                    e.DisplayText = $"{e.RowHandle + 1}";
+                }
             };
         }
 

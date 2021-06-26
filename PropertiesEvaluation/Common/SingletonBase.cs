@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace GOLite.Common
+﻿namespace GOLite.Common
 {
     /// <summary>
     /// Класс-создатель синглтонов

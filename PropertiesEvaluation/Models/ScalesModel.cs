@@ -1,23 +1,23 @@
 ﻿using GOLite.Common;
 using GOLite.Entities;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 
 namespace GOLite.Models
 {
     public class ScalesModel : BaseValidation
     {
         #region Свойства
+
         /// <summary>
         /// Шкалы
         /// </summary>
         public virtual ObservableCollection<Scale> Scales { get; set; } = new ObservableCollection<Scale>();
-        #endregion
+
+        #endregion Свойства
 
         #region Методы
+
         public override void OnValidate()
         {
             var scale = Scales.FirstOrDefault(x => string.IsNullOrWhiteSpace(x.Name) && !x.ForDelete);
@@ -30,6 +30,7 @@ namespace GOLite.Models
             if (scale != null)
                 AddError($"Шкала {scale.Name} содержит четное количество баллов! Оно должно быть нечетным!");
         }
-        #endregion
+
+        #endregion Методы
     }
 }

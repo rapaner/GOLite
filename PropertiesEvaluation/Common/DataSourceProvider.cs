@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
-using System.Data.Common;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
@@ -16,14 +15,18 @@ namespace GOLite.Common
     public class DataSourceProvider : SingletonBase<DataSourceProvider>
     {
         #region Свойства
+
         /// <summary>
         /// Строка подключения
         /// </summary>
-        string DataBaseFile { get; } = @"C:\LocalDBs\GOLite_v2.db3";
-        #endregion
+        private string DataBaseFile { get; } = @"C:\LocalDBs\GOLite_v2.db3";
+
+        #endregion Свойства
 
         #region Методы
+
         #region База данных
+
         /// <summary>
         /// Создать базу данных
         /// </summary>
@@ -136,9 +139,11 @@ namespace GOLite.Common
                 }
             }
         }
-        #endregion
+
+        #endregion База данных
 
         #region Качества
+
         /// <summary>
         /// Получить список групп качеств
         /// </summary>
@@ -235,6 +240,7 @@ namespace GOLite.Common
                         context.Qualities.DeleteAllOnSubmit(qualitiesForDelete);
                         context.SubmitChanges();
                         context.QualityGroups.DeleteAllOnSubmit(qualityGroupsForDelete);
+                        context.SubmitChanges();
 
                         var qualityGroupsForUpdate = (from qgDB in qualityGroupsDB
                                                       join qg in qualityGroups
@@ -246,12 +252,13 @@ namespace GOLite.Common
                             var s = qualityGroups.FirstOrDefault(x => x.QualityGroupID == qgDB.ID);
                             qgDB.Name = s.Name?.Trim();
 
-                            qualitiesForDelete = (from qDB in qgDB.Qualities
+                            qualitiesForDelete = (from qDB in context.Qualities.ToList()
                                                   join q in s.Qualities
                                                   on qDB.ID equals q.QualityID
                                                   where q.ForDelete
                                                   select qDB).ToList();
                             context.Qualities.DeleteAllOnSubmit(qualitiesForDelete);
+                            context.SubmitChanges();
 
                             if (qualitiesForDelete.Any())
                             {
@@ -277,9 +284,11 @@ namespace GOLite.Common
                                 qDB.GoodQuality = q.GoodQuality;
                                 qDB.Sort = q.Sort;
                             }
+                            context.SubmitChanges();
 
                             var qualitiesForInsert = s.Qualities.Where(x => x.QualityID == 0 && !x.ForDelete).ToList();
                             context.Qualities.InsertAllOnSubmit(qualitiesForInsert.Select(x => new Qualities() { QualityGroupID = qgDB.ID, GoodQuality = x.GoodQuality, BadQuality = x.BadQuality, Sort = x.Sort }));
+                            context.SubmitChanges();
                         }
 
                         var qualityGroupsForInsert = qualityGroups.Where(x => x.QualityGroupID == 0 && !x.ForDelete).ToList();
@@ -369,9 +378,11 @@ namespace GOLite.Common
                 throw new Exception("Группы качеств не получены!", ex);
             }
         }
-        #endregion
+
+        #endregion Качества
 
         #region Шкалы
+
         /// <summary>
         /// Получить список шкал
         /// </summary>
@@ -485,6 +496,7 @@ namespace GOLite.Common
                                                    where sc.ForDelete
                                                    select scDB).ToList();
                             context.ScaleScores.DeleteAllOnSubmit(scoresForDelete);
+                            context.SubmitChanges();
 
                             if (scoresForDelete.Any())
                             {
@@ -509,9 +521,11 @@ namespace GOLite.Common
                                 scDB.Score = sc.Score.Value;
                                 scDB.Sort = sc.Sort;
                             }
+                            context.SubmitChanges();
 
                             var scoresForInsert = s.Scores.Where(x => x.ScaleScoreID == 0 && !x.ForDelete).ToList();
                             context.ScaleScores.InsertAllOnSubmit(scoresForInsert.Select(x => new ScaleScores() { ScaleID = sDB.ID, Score = x.Score.Value, Sort = x.Sort }));
+                            context.SubmitChanges();
                         }
 
                         var scalesForInsert = scales.Where(x => x.ScaleID == 0 && !x.ForDelete).ToList();
@@ -610,9 +624,11 @@ namespace GOLite.Common
                 throw new Exception("Шкалы не получены!", ex);
             }
         }
-        #endregion
+
+        #endregion Шкалы
 
         #region Участники
+
         /// <summary>
         /// Получить список всех участников
         /// </summary>
@@ -704,6 +720,7 @@ namespace GOLite.Common
                                               select uDB).ToList();
 
                         context.Users.DeleteAllOnSubmit(usersForDelete);
+                        context.SubmitChanges();
 
                         var usersForUpdate = (from uDB in usersDB
                                               join u in users
@@ -715,11 +732,12 @@ namespace GOLite.Common
                             var u = users.FirstOrDefault(x => x.UserID == uDB.ID);
                             uDB.UserName = u.UserName?.Trim();
                         }
+                        context.SubmitChanges();
 
                         var usersForInsert = users.Where(x => x.UserID == 0).ToList();
                         context.Users.InsertAllOnSubmit(usersForInsert.Select(x => new Users() { UserName = x.UserName }));
-
                         context.SubmitChanges();
+
                         return true;
                     }
                 }
@@ -729,9 +747,11 @@ namespace GOLite.Common
                 throw new Exception("Участники не сохранены!", ex);
             }
         }
-        #endregion
+
+        #endregion Участники
 
         #region Тестирование
+
         /// <summary>
         /// Получить список тестов
         /// </summary>
@@ -1013,7 +1033,6 @@ namespace GOLite.Common
                             using (Main context2 = new Main(connection, new SqliteVendor()))
                             {
                                 context2.TestResults.DeleteAllOnSubmit(testDB.TestResults);
-                                var cs = context2.GetChangeSet();
                                 context2.SubmitChanges();
                             }
                         }
@@ -1057,6 +1076,7 @@ namespace GOLite.Common
                                     var tr = uwc.TestResults.FirstOrDefault(y => y.TestResultID == x.ID);
                                     x.ScaleScoreID = tr.ScaleScoreID;
                                 });
+                                context.SubmitChanges();
 
                                 var resultsForInsert = uwc.TestResults.Where(x => x.TestResultID == 0).ToList();
                                 context.TestResults.InsertAllOnSubmit(uwc.TestResults.Where(x => x.TestResultID == 0).Select(x => new TestResults()
@@ -1067,6 +1087,7 @@ namespace GOLite.Common
                                     UserID = x.UserID,
                                     TestUserID = uwc.TestUserID
                                 }));
+                                context.SubmitChanges();
                             }
                             context.SubmitChanges();
                         }
@@ -1220,7 +1241,9 @@ namespace GOLite.Common
                 throw new Exception("Тест не удален!", ex);
             }
         }
-        #endregion
-        #endregion
+
+        #endregion Тестирование
+
+        #endregion Методы
     }
 }

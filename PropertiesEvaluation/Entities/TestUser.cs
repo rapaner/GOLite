@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace GOLite.Entities
 {
@@ -13,6 +9,7 @@ namespace GOLite.Entities
     public class TestUser : INotifyPropertyChanged
     {
         #region Поля
+
         /// <summary>
         /// Начальное ФИО
         /// </summary>
@@ -25,9 +22,11 @@ namespace GOLite.Entities
 
         private int sort;
         private string userName;
-        #endregion
+
+        #endregion Поля
 
         #region Конструкторы
+
         public TestUser()
         {
         }
@@ -42,9 +41,11 @@ namespace GOLite.Entities
             _userName = userName;
             _sort = sort;
         }
-        #endregion
+
+        #endregion Конструкторы
 
         #region Свойства
+
         /// <summary>
         /// Код участника теста
         /// </summary>
@@ -82,6 +83,17 @@ namespace GOLite.Entities
                 if (userName != value)
                 {
                     userName = value;
+                    if (userName != null && userName.Length > 0)
+                    {
+                        if (userName.Length == 1)
+                        {
+                            userName = char.ToUpper(userName[0]).ToString();
+                        }
+                        else
+                        {
+                            userName = char.ToUpper(userName[0]) + userName.Substring(1);
+                        }
+                    }
                     NotifyPropertyChanged();
                 }
             }
@@ -116,7 +128,7 @@ namespace GOLite.Entities
         public bool IsSortChanged =>
             Sort != _sort;
 
-        #endregion
+        #endregion Свойства
 
         public event PropertyChangedEventHandler PropertyChanged;
 

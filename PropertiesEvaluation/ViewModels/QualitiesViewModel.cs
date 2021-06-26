@@ -13,6 +13,7 @@ namespace GOLite.ViewModels
     public class QualitiesViewModel : CommonViewModel
     {
         #region Свойства
+
         /// <summary>
         /// Модель с группами качеств
         /// </summary>
@@ -37,15 +38,19 @@ namespace GOLite.ViewModels
         public void OnCurrentQualityChanged()
         {
             this.RaiseCanExecuteChanged(vm => vm.DeleteQuality());
+            this.RaiseCanExecuteChanged(vm => vm.UpQuality());
+            this.RaiseCanExecuteChanged(vm => vm.DownQuality());
         }
 
         /// <summary>
         /// Обновить качества
         /// </summary>
         public virtual bool RefreshQualitiesTrigger { get; set; }
-        #endregion
+
+        #endregion Свойства
 
         #region Методы
+
         /// <summary>
         /// Получить список групп качеств
         /// </summary>
@@ -213,7 +218,7 @@ namespace GOLite.ViewModels
         public bool CanDownQuality()
         {
             return CurrentQuality != null
-                && CurrentQuality.Sort < CurrentQualityGroup.Qualities.Count - 1;
+                && CurrentQuality.Sort < CurrentQualityGroup.Qualities.Count;
         }
 
         /// <summary>
@@ -248,6 +253,7 @@ namespace GOLite.ViewModels
             }
             CloseQualitiesView();
         }
-        #endregion
+
+        #endregion Методы
     }
 }

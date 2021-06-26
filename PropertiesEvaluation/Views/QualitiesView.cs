@@ -140,7 +140,6 @@ namespace GOLite.Views
                 fluentAPI.SetObjectDataSourceBinding(qualitiesBindingSource, vm => vm.CurrentQualityGroup.Qualities);
             });
 
-
             //  Изменения выбранных строк
             fluentAPI.EventToCommand<FocusedRowObjectChangedEventArgs>(gvQualityGroups, "FocusedRowObjectChanged", vm => vm.ChangeCurrentQualityGroup(null), args =>
             {
@@ -171,6 +170,7 @@ namespace GOLite.Views
                 if (gvQualityGroups.GetRow(e.RowHandle) is QualityGroup at && at.ForDelete)
                     e.Appearance.FontStyleDelta = FontStyle.Strikeout;
             };
+
             gvQualities.RowStyle += (o, e) =>
             {
                 if (e.RowHandle < 0)
@@ -178,6 +178,14 @@ namespace GOLite.Views
                 if (gvQualities.GetRow(e.RowHandle) is Quality at && at.ForDelete)
                     e.Appearance.FontStyleDelta = FontStyle.Strikeout;
             };
+
+            gvQualities.CustomDrawCell += (o, e) =>
+              {
+                  if (e.Column == colNumeration)
+                  {
+                      e.DisplayText = $"{e.RowHandle + 1}";
+                  }
+              };
         }
     }
 }

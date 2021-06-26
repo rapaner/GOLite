@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace GOLite.Entities.Messages
+﻿namespace GOLite.Entities.Messages
 {
     /// <summary>
     /// Сообщение с результатами участника

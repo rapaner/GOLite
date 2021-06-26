@@ -98,15 +98,16 @@ namespace GOLite.Views
             this.gvUsersWithResults = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colUserName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupResults = new DevExpress.XtraEditors.GroupControl();
-            this.testQualitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mvvmContext = new DevExpress.Utils.MVVM.MVVMContext(this.components);
             this.tlpResults = new System.Windows.Forms.TableLayoutPanel();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.teResultsForInsert = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnInsertResults = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.testQualitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mvvmContext = new DevExpress.Utils.MVVM.MVVMContext(this.components);
+            this.colNumeration = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -152,15 +153,15 @@ namespace GOLite.Views
             ((System.ComponentModel.ISupportInitialize)(this.gvUsersWithResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupResults)).BeginInit();
             this.groupResults.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.testQualitiesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).BeginInit();
             this.tlpResults.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teResultsForInsert.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testQualitiesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -205,7 +206,7 @@ namespace GOLite.Views
             // 
             // bbiShowDocument
             // 
-            this.bbiShowDocument.Caption = "Набор для раздачи участникам";
+            this.bbiShowDocument.Caption = "Таблица для ввода данных";
             this.bbiShowDocument.Id = 3;
             this.bbiShowDocument.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiShowDocument.ImageOptions.Image")));
             this.bbiShowDocument.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiShowDocument.ImageOptions.LargeImage")));
@@ -531,6 +532,7 @@ namespace GOLite.Views
             // gvTestUsers
             // 
             this.gvTestUsers.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colNumeration,
             this.colSort,
             this.colUserName});
             this.gvTestUsers.GridControl = this.gcTestUsers;
@@ -553,7 +555,8 @@ namespace GOLite.Views
             this.colUserName.FieldName = "UserName";
             this.colUserName.Name = "colUserName";
             this.colUserName.Visible = true;
-            this.colUserName.VisibleIndex = 0;
+            this.colUserName.VisibleIndex = 1;
+            this.colUserName.Width = 727;
             // 
             // standaloneBarDockControl2
             // 
@@ -838,15 +841,6 @@ namespace GOLite.Views
             this.groupResults.TabIndex = 0;
             this.groupResults.Text = "Ввод результатов";
             // 
-            // testQualitiesBindingSource
-            // 
-            this.testQualitiesBindingSource.DataMember = "TestQualities";
-            this.testQualitiesBindingSource.DataSource = this.testBindingSource;
-            // 
-            // mvvmContext
-            // 
-            this.mvvmContext.ContainerControl = this;
-            // 
             // tlpResults
             // 
             this.tlpResults.ColumnCount = 1;
@@ -873,6 +867,25 @@ namespace GOLite.Views
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
+            // teResultsForInsert
+            // 
+            this.teResultsForInsert.Location = new System.Drawing.Point(101, 5);
+            this.teResultsForInsert.MenuManager = this.ribbon;
+            this.teResultsForInsert.Name = "teResultsForInsert";
+            this.teResultsForInsert.Size = new System.Drawing.Size(256, 20);
+            this.teResultsForInsert.StyleController = this.layoutControl3;
+            this.teResultsForInsert.TabIndex = 4;
+            // 
+            // btnInsertResults
+            // 
+            this.btnInsertResults.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInsertResults.ImageOptions.Image")));
+            this.btnInsertResults.Location = new System.Drawing.Point(361, 5);
+            this.btnInsertResults.Name = "btnInsertResults";
+            this.btnInsertResults.Size = new System.Drawing.Size(99, 22);
+            this.btnInsertResults.StyleController = this.layoutControl3;
+            this.btnInsertResults.TabIndex = 5;
+            this.btnInsertResults.Text = "Вставить";
+            // 
             // layoutControlGroup3
             // 
             this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -885,15 +898,6 @@ namespace GOLite.Views
             this.layoutControlGroup3.Size = new System.Drawing.Size(465, 32);
             this.layoutControlGroup3.TextVisible = false;
             // 
-            // teResultsForInsert
-            // 
-            this.teResultsForInsert.Location = new System.Drawing.Point(102, 5);
-            this.teResultsForInsert.MenuManager = this.ribbon;
-            this.teResultsForInsert.Name = "teResultsForInsert";
-            this.teResultsForInsert.Size = new System.Drawing.Size(255, 20);
-            this.teResultsForInsert.StyleController = this.layoutControl3;
-            this.teResultsForInsert.TabIndex = 4;
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.teResultsForInsert;
@@ -903,16 +907,6 @@ namespace GOLite.Views
             this.layoutControlItem9.Text = "Ввод результатов";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(93, 13);
             // 
-            // btnInsertResults
-            // 
-            this.btnInsertResults.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInsertResults.ImageOptions.Image")));
-            this.btnInsertResults.Location = new System.Drawing.Point(361, 5);
-            this.btnInsertResults.Name = "btnInsertResults";
-            this.btnInsertResults.Size = new System.Drawing.Size(99, 22);
-            this.btnInsertResults.StyleController = this.layoutControl3;
-            this.btnInsertResults.TabIndex = 5;
-            this.btnInsertResults.Text = "Вставить";
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.btnInsertResults;
@@ -921,6 +915,25 @@ namespace GOLite.Views
             this.layoutControlItem10.Size = new System.Drawing.Size(103, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
+            // 
+            // testQualitiesBindingSource
+            // 
+            this.testQualitiesBindingSource.DataMember = "TestQualities";
+            this.testQualitiesBindingSource.DataSource = this.testBindingSource;
+            // 
+            // mvvmContext
+            // 
+            this.mvvmContext.ContainerControl = this;
+            // 
+            // colNumeration
+            // 
+            this.colNumeration.Caption = "№";
+            this.colNumeration.FieldName = "colNumeration";
+            this.colNumeration.Name = "colNumeration";
+            this.colNumeration.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colNumeration.Visible = true;
+            this.colNumeration.VisibleIndex = 0;
+            this.colNumeration.Width = 30;
             // 
             // TestEditView
             // 
@@ -983,15 +996,15 @@ namespace GOLite.Views
             ((System.ComponentModel.ISupportInitialize)(this.gvUsersWithResults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupResults)).EndInit();
             this.groupResults.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.testQualitiesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).EndInit();
             this.tlpResults.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teResultsForInsert.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testQualitiesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1075,5 +1088,6 @@ namespace GOLite.Views
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraGrid.Columns.GridColumn colNumeration;
     }
 }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace GOLite.Entities
 {
@@ -42,6 +39,5 @@ namespace GOLite.Entities
         /// Дата создания
         /// </summary>
         public DateTime DateCreated { get; set; }
-
     }
 }

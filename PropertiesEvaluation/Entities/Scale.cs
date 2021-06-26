@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace GOLite.Entities
 {
@@ -17,6 +14,7 @@ namespace GOLite.Entities
         /// Начальное название шкалы
         /// </summary>
         private string _name;
+
         private int scaleID;
         private string name;
         private bool forDelete;
