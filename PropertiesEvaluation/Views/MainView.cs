@@ -1,25 +1,18 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Utils.MVVM.Services;
-using DevExpress.XtraBars;
 using GOLite.Services;
 using GOLite.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 
 namespace GOLite.Views
 {
     public partial class MainView : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         #region Конструкторы
+
         public MainView()
         {
             InitializeComponent();
+            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
 
             mvvmContext.ViewModelType = typeof(MainViewModel);
 
@@ -32,13 +25,17 @@ namespace GOLite.Views
                 }
             };
         }
-        #endregion
+
+        #endregion Конструкторы
 
         #region Свойства
+
         public T GetDataContext<T>() => mvvmContext.GetViewModel<T>();
-        #endregion
+
+        #endregion Свойства
 
         #region Методы
+
         /// <summary>
         /// Настройка привязок
         /// </summary>
@@ -60,7 +57,6 @@ namespace GOLite.Views
             fluentAPI.BindCommand(bbiUsers, vm => vm.ShowUsersView());
 
             //  Триггеры
-
         }
 
         /// <summary>
@@ -84,6 +80,7 @@ namespace GOLite.Views
                   }
               };
         }
-        #endregion
+
+        #endregion Методы
     }
 }
