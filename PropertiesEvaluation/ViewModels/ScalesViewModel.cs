@@ -69,6 +69,7 @@ namespace GOLite.ViewModels
             try
             {
                 Model.Scales = await WaitFormService.ShowAsync(DataSourceProvider.Instance.GetScalesAsync());
+                this.RaisePropertiesChanged();
             }
             catch (Exception ex)
             {
@@ -210,6 +211,8 @@ namespace GOLite.ViewModels
                 return;
             scoreForChange.Sort += 1;
             CurrentScore.Sort -= 1;
+            this.RaiseCanExecuteChanged(vm => vm.UpScore());
+            this.RaiseCanExecuteChanged(vm => vm.DownScore());
         }
 
         /// <summary>
@@ -231,6 +234,8 @@ namespace GOLite.ViewModels
                 return;
             scoreForChange.Sort -= 1;
             CurrentScore.Sort += 1;
+            this.RaiseCanExecuteChanged(vm => vm.UpScore());
+            this.RaiseCanExecuteChanged(vm => vm.DownScore());
         }
 
         /// <summary>

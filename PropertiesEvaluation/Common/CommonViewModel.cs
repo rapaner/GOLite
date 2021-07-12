@@ -249,7 +249,7 @@ namespace GOLite.Common
                     var viewModel = ViewModelSource.Create(() => new TestsViewModel());
                     viewModel.Tests = tests;
                     document = DocumentManagerService.CreateDocument("TestsView", viewModel);
-                    document.Title = "Тесты";
+                    document.Title = "Список групп";
                     document.Id = "TestsView";
                     document.Show();
                 }

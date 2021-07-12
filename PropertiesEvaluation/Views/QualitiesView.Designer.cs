@@ -45,6 +45,7 @@ namespace GOLite.Views
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.gcQualities = new DevExpress.XtraGrid.GridControl();
             this.gvQualities = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colSort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNumeration = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGoodQuality = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBadQuality = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -76,7 +77,6 @@ namespace GOLite.Views
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.colSort = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qualitiesBindingSource)).BeginInit();
@@ -144,7 +144,6 @@ namespace GOLite.Views
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
             this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonPageCategory1.Text = "Качества";
             // 
             // ribbonPage1
             // 
@@ -199,7 +198,7 @@ namespace GOLite.Views
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(347, 411);
             this.groupControl2.TabIndex = 10;
-            this.groupControl2.Text = "Баллы шкалы";
+            this.groupControl2.Text = "Пары качеств";
             // 
             // layoutControl2
             // 
@@ -239,6 +238,13 @@ namespace GOLite.Views
             this.gvQualities.OptionsView.ShowGroupPanel = false;
             this.gvQualities.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSort, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colSort
+            // 
+            this.colSort.Caption = "Сортировка";
+            this.colSort.FieldName = "Sort";
+            this.colSort.Name = "colSort";
+            this.colSort.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             // 
             // colNumeration
             // 
@@ -460,7 +466,7 @@ namespace GOLite.Views
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(346, 411);
             this.groupControl1.TabIndex = 8;
-            this.groupControl1.Text = "Группы";
+            this.groupControl1.Text = "Название списка";
             // 
             // layoutControl1
             // 
@@ -551,13 +557,6 @@ namespace GOLite.Views
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.StandaloneBarDockControl = this.standaloneBarDockControl2;
             this.bar3.Text = "Custom 3";
-            // 
-            // colSort
-            // 
-            this.colSort.Caption = "Сортировка";
-            this.colSort.FieldName = "Sort";
-            this.colSort.Name = "colSort";
-            this.colSort.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             // 
             // QualitiesView
             // 

@@ -9,6 +9,7 @@ namespace GOLite.Views
     {
         public ScalesView()
         {
+            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
             InitializeComponent();
 
             mvvmContext.ViewModelType = typeof(ScalesViewModel);
@@ -114,13 +115,13 @@ namespace GOLite.Views
                 .After(() =>
                 {
                     gvScores.RefreshData();
-                    gvScores.FocusedRowHandle--;
+                    //gvScores.FocusedRowHandle--;
                 });
             fluentAPI.WithCommand(vm => vm.DownScore())
                 .After(() =>
                 {
                     gvScores.RefreshData();
-                    gvScores.FocusedRowHandle++;
+                    //gvScores.FocusedRowHandle++;
                 });
             fluentAPI.WithCommand(vm => vm.DeleteScore())
                 .After(() =>

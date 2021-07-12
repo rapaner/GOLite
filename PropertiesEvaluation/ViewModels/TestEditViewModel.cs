@@ -70,11 +70,6 @@ namespace GOLite.ViewModels
         }
 
         /// <summary>
-        /// Пользователи с результатами
-        /// </summary>
-        public virtual ObservableCollection<UserWithTestResults> UsersWithResults { get; set; } = new ObservableCollection<UserWithTestResults>();
-
-        /// <summary>
         /// Текущий пользователь с результатами
         /// </summary>
         public virtual UserWithTestResults CurrentUserWithResults { get; set; }
@@ -126,6 +121,7 @@ namespace GOLite.ViewModels
                     return;
                 Model.Test = await WaitFormService.ShowAsync(DataSourceProvider.Instance.GetTestAsync(Model.Test.TestID));
 
+                this.RaisePropertiesChanged();
                 this.RaiseCanExecuteChanged(vm => vm.CreateFinalTestResults());
                 this.RaiseCanExecuteChanged(vm => vm.DeleteTest());
             }
@@ -163,6 +159,7 @@ namespace GOLite.ViewModels
                 Messenger.Default.Send(enMessage.RefreshTests, "TestsView");
                 await WaitFormService.ShowAsync(GetTestAsync());
                 RefreshTestToken = !RefreshTestToken;
+                CreateGridControlForResults = !CreateGridControlForResults;
                 if (showMessage)
                     MessageBoxService.ShowMessage("Тест сохранен!", "", MessageButton.OK, MessageIcon.Information);
             }
@@ -194,6 +191,7 @@ namespace GOLite.ViewModels
                 Messenger.Default.Send(enMessage.RefreshTests, "TestsView");
                 await WaitFormService.ShowAsync(GetTestAsync());
                 RefreshTestToken = !RefreshTestToken;
+                CreateGridControlForResults = !CreateGridControlForResults;
                 if (showMessage)
                     MessageBoxService.ShowMessage("Тест сохранен!", "", MessageButton.OK, MessageIcon.Information);
             }
@@ -231,6 +229,7 @@ namespace GOLite.ViewModels
                                                                    })
             }));
             RefreshTestToken = !RefreshTestToken;
+            CreateGridControlForResults = !CreateGridControlForResults;
             MessageBoxService.ShowMessage("Результаты созданы!", "", MessageButton.OK, MessageIcon.Information);
         }
 
@@ -302,7 +301,13 @@ namespace GOLite.ViewModels
         {
             if (Model.Test.IsChanged)
             {
-                MessageBoxService.ShowMessage("Есть несохраненные изменения! Сохраните тест перед формированием отчета!");
+                MessageBoxService.ShowMessage("Есть несохраненные изменения! Сохраните тест перед формированием отчета!", "", MessageButton.OK, MessageIcon.Warning);
+                return;
+            }
+
+            if (Model.Test.UsersWithResults.FirstOrDefault(x => x.TestResults.FirstOrDefault(y => y.ScaleScoreID == 0) != null) != null)
+            {
+                MessageBoxService.ShowMessage("Не для всех участников введены баллы!", "", MessageButton.OK, MessageIcon.Warning);
                 return;
             }
 

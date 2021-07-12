@@ -141,7 +141,6 @@ namespace GOLite.Views
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
             this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonPageCategory1.Text = "Шкалы";
             // 
             // ribbonPage1
             // 

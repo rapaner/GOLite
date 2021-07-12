@@ -72,7 +72,7 @@ namespace GOLite.Views
             // 
             // bbiTests
             // 
-            this.bbiTests.Caption = "Список тестов";
+            this.bbiTests.Caption = "Группы";
             this.bbiTests.Id = 1;
             this.bbiTests.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiTests.ImageOptions.Image")));
             this.bbiTests.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiTests.ImageOptions.LargeImage")));
@@ -109,14 +109,14 @@ namespace GOLite.Views
             this.ribbonPageGroup1,
             this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Тестирование на качества";
+            this.ribbonPage1.Text = "Групповая оценка личности";
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiTests);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Тесты";
+            this.ribbonPageGroup1.Text = "Группы";
             // 
             // ribbonPageGroup2
             // 
@@ -148,7 +148,7 @@ namespace GOLite.Views
             this.IsMdiContainer = true;
             this.Name = "MainView";
             this.Ribbon = this.ribbon;
-            this.Text = "Тестирование на качества";
+            this.Text = "Групповая оценка личности";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).EndInit();

@@ -108,13 +108,11 @@ namespace GOLite.Views
                 .After(() =>
                 {
                     gvQualities.RefreshData();
-                    gvQualities.FocusedRowHandle = gvQualities.RowCount - 1;
                 });
             fluentAPI.WithCommand(vm => vm.UpQuality())
                 .After(() =>
                 {
                     gvQualities.RefreshData();
-                    gvQualities.FocusedRowHandle--;
                 });
             fluentAPI.WithCommand(vm => vm.DownQuality())
                 .After(() =>

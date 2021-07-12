@@ -495,7 +495,10 @@ namespace GOLite.Common
                                                    on scDB.ID equals sc.ScaleScoreID
                                                    where sc.ForDelete
                                                    select scDB).ToList();
-                            context.ScaleScores.DeleteAllOnSubmit(scoresForDelete);
+                            foreach(var ss in scoresForDelete)
+                            {
+                                context.ExecuteCommandRaw($"DELETE FROM ScaleScores WHERE ID = {ss.ID}");
+                            }
                             context.SubmitChanges();
 
                             if (scoresForDelete.Any())

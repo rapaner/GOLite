@@ -98,6 +98,7 @@ namespace GOLite.Views
             this.usersWithResultsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvUsersWithResults = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colUserName1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSort2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupResults = new DevExpress.XtraEditors.GroupControl();
             this.tlpResults = new System.Windows.Forms.TableLayoutPanel();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
@@ -241,7 +242,6 @@ namespace GOLite.Views
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
             this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonPageCategory1.Text = "Тест";
             // 
             // ribbonPage1
             // 
@@ -249,7 +249,7 @@ namespace GOLite.Views
             this.ribbonPageGroup1,
             this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Тест";
+            this.ribbonPage1.Text = "Группа";
             // 
             // ribbonPageGroup1
             // 
@@ -332,7 +332,7 @@ namespace GOLite.Views
             // lueQualityGroups
             // 
             this.lueQualityGroups.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.testBindingSource, "QualityGroupID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.lueQualityGroups.Location = new System.Drawing.Point(88, 73);
+            this.lueQualityGroups.Location = new System.Drawing.Point(96, 73);
             this.lueQualityGroups.MenuManager = this.ribbon;
             this.lueQualityGroups.Name = "lueQualityGroups";
             this.lueQualityGroups.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -342,7 +342,7 @@ namespace GOLite.Views
             this.lueQualityGroups.Properties.DataSource = this.qualityGroupsBindingSource;
             this.lueQualityGroups.Properties.DisplayMember = "Name";
             this.lueQualityGroups.Properties.ValueMember = "QualityGroupID";
-            this.lueQualityGroups.Size = new System.Drawing.Size(692, 20);
+            this.lueQualityGroups.Size = new System.Drawing.Size(684, 20);
             this.lueQualityGroups.StyleController = this.layoutControl1;
             this.lueQualityGroups.TabIndex = 5;
             // 
@@ -357,19 +357,19 @@ namespace GOLite.Views
             // memoExEdit1
             // 
             this.memoExEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.testBindingSource, "Description", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.memoExEdit1.Location = new System.Drawing.Point(88, 97);
+            this.memoExEdit1.Location = new System.Drawing.Point(96, 97);
             this.memoExEdit1.MenuManager = this.ribbon;
             this.memoExEdit1.Name = "memoExEdit1";
             this.memoExEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.memoExEdit1.Size = new System.Drawing.Size(692, 20);
+            this.memoExEdit1.Size = new System.Drawing.Size(684, 20);
             this.memoExEdit1.StyleController = this.layoutControl1;
             this.memoExEdit1.TabIndex = 4;
             // 
             // lueScales
             // 
             this.lueScales.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.testBindingSource, "ScaleID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.lueScales.Location = new System.Drawing.Point(88, 49);
+            this.lueScales.Location = new System.Drawing.Point(96, 49);
             this.lueScales.MenuManager = this.ribbon;
             this.lueScales.Name = "lueScales";
             this.lueScales.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -379,7 +379,7 @@ namespace GOLite.Views
             this.lueScales.Properties.DataSource = this.scalesBindingSource;
             this.lueScales.Properties.DisplayMember = "Name";
             this.lueScales.Properties.ValueMember = "ScaleID";
-            this.lueScales.Size = new System.Drawing.Size(692, 20);
+            this.lueScales.Size = new System.Drawing.Size(684, 20);
             this.lueScales.StyleController = this.layoutControl1;
             this.lueScales.TabIndex = 2;
             // 
@@ -412,10 +412,10 @@ namespace GOLite.Views
             // textEdit1
             // 
             this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.testBindingSource, "TestName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textEdit1.Location = new System.Drawing.Point(88, 5);
+            this.textEdit1.Location = new System.Drawing.Point(96, 5);
             this.textEdit1.MenuManager = this.ribbon;
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(692, 20);
+            this.textEdit1.Size = new System.Drawing.Size(684, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 0;
             // 
@@ -441,8 +441,8 @@ namespace GOLite.Views
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(779, 24);
-            this.layoutControlItem1.Text = "Название теста";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(80, 13);
+            this.layoutControlItem1.Text = "Название группы";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(88, 13);
             // 
             // layoutControlItem2
             // 
@@ -469,7 +469,7 @@ namespace GOLite.Views
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(779, 24);
             this.layoutControlItem4.Text = "Шкала";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(80, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(88, 13);
             // 
             // layoutControlItem5
             // 
@@ -477,8 +477,8 @@ namespace GOLite.Views
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 92);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(779, 39);
-            this.layoutControlItem5.Text = "Описание";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(80, 13);
+            this.layoutControlItem5.Text = "Инструкция";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(88, 13);
             // 
             // layoutControlItem6
             // 
@@ -486,8 +486,8 @@ namespace GOLite.Views
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 68);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(779, 24);
-            this.layoutControlItem6.Text = "Группа качеств";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(80, 13);
+            this.layoutControlItem6.Text = "Список качеств";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(88, 13);
             // 
             // groupControl2
             // 
@@ -801,7 +801,7 @@ namespace GOLite.Views
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(309, 400);
             this.groupControl4.TabIndex = 1;
-            this.groupControl4.Text = "Участники с результатами";
+            this.groupControl4.Text = "Участник";
             // 
             // gcUsersWithResults
             // 
@@ -824,7 +824,8 @@ namespace GOLite.Views
             // gvUsersWithResults
             // 
             this.gvUsersWithResults.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colUserName1});
+            this.colUserName1,
+            this.colSort2});
             this.gvUsersWithResults.GridControl = this.gcUsersWithResults;
             this.gvUsersWithResults.Name = "gvUsersWithResults";
             this.gvUsersWithResults.OptionsBehavior.Editable = false;
@@ -832,14 +833,23 @@ namespace GOLite.Views
             this.gvUsersWithResults.OptionsCustomization.AllowSort = false;
             this.gvUsersWithResults.OptionsDetail.EnableMasterViewMode = false;
             this.gvUsersWithResults.OptionsView.ShowGroupPanel = false;
+            this.gvUsersWithResults.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSort2, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colUserName1
             // 
-            this.colUserName1.Caption = "Участник";
+            this.colUserName1.Caption = " ";
             this.colUserName1.FieldName = "CodeName";
             this.colUserName1.Name = "colUserName1";
             this.colUserName1.Visible = true;
             this.colUserName1.VisibleIndex = 0;
+            // 
+            // colSort2
+            // 
+            this.colSort2.Caption = "Сортировка";
+            this.colSort2.FieldName = "Sort";
+            this.colSort2.Name = "colSort2";
+            this.colSort2.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             // 
             // groupResults
             // 
@@ -849,7 +859,7 @@ namespace GOLite.Views
             this.groupResults.Name = "groupResults";
             this.groupResults.Size = new System.Drawing.Size(475, 400);
             this.groupResults.TabIndex = 0;
-            this.groupResults.Text = "Ввод результатов";
+            this.groupResults.Text = " ";
             // 
             // tlpResults
             // 
@@ -1089,5 +1099,6 @@ namespace GOLite.Views
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraGrid.Columns.GridColumn colNumeration;
+        private DevExpress.XtraGrid.Columns.GridColumn colSort2;
     }
 }

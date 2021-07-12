@@ -136,7 +136,6 @@ namespace GOLite.Views
                 fluentAPI.SetObjectDataSourceBinding(testBindingSource, vm => vm.Model.Test);
                 gvTestUsers.RefreshData();
                 gvUsersWithResults.RefreshData();
-                TestResultsGridControl = CreateResultsGridControl();
             });
             fluentAPI.SetTrigger(vm => vm.CreateGridControlForResults, (x) =>
               {

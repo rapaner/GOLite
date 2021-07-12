@@ -250,7 +250,8 @@ namespace GOLite.Common
                     }
                     else
                     {
-                        dr[$"TestQuality{q.Sort}"] = testResult.ScaleScoreID;
+                        //dr[$"TestQuality{q.Sort}"] = testResult.ScaleScoreID;
+                        dr[$"TestQuality{q.Sort}"] = scaleScores.FirstOrDefault(x => x.ScaleScoreID == testResult.ScaleScoreID).Score;
                     }
                 }
                 dt.Rows.Add(dr);

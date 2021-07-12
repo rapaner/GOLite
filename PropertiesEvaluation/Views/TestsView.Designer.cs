@@ -112,7 +112,6 @@ namespace GOLite.Views
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
             this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonPageCategory1.Text = "Тесты";
             // 
             // ribbonPage1
             // 
@@ -168,7 +167,7 @@ namespace GOLite.Views
             // 
             // colTestName
             // 
-            this.colTestName.Caption = "Тестирование";
+            this.colTestName.Caption = "Название группы";
             this.colTestName.FieldName = "TestName";
             this.colTestName.Name = "colTestName";
             this.colTestName.Visible = true;
