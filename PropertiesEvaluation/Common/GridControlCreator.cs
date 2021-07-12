@@ -65,7 +65,7 @@ namespace GOLite.Common
                 dt.Columns.Add(new DataColumn($"TestQuality{q.Sort}", typeof(int)));
             }
 
-            foreach (var tu in testUsers)
+            foreach (var tu in testUsers.OrderBy(x => x.Sort))
             {
                 var dr = dt.NewRow();
                 dr["UserID"] = tu.UserID;

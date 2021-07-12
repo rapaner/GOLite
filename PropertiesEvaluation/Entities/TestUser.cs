@@ -117,6 +117,12 @@ namespace GOLite.Entities
             || Sort != _sort;
 
         /// <summary>
+        /// Есть ли изменения, влекущие за собой удаление результатов?
+        /// </summary>
+        public bool IsChangedForResultsDelete =>
+            UserName != _userName;
+
+        /// <summary>
         /// Изменены ФИО
         /// </summary>
         public bool IsUserNameChanged =>

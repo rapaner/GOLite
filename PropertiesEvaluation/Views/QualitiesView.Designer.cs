@@ -466,7 +466,7 @@ namespace GOLite.Views
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(346, 411);
             this.groupControl1.TabIndex = 8;
-            this.groupControl1.Text = "Название списка";
+            this.groupControl1.Text = "Списки качеств";
             // 
             // layoutControl1
             // 
@@ -509,7 +509,7 @@ namespace GOLite.Views
             // 
             // colName
             // 
-            this.colName.Caption = "Название";
+            this.colName.Caption = "Название списка";
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;

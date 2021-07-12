@@ -179,7 +179,7 @@ namespace GOLite.ViewModels
                 MessageBoxService.ShowMessage(Model.GetErrorListInterpolation(), "", MessageButton.OK, MessageIcon.Warning);
                 return;
             }
-            if ((Model.Test.IsQualityGroupChanged || Model.Test.TestUsers.FirstOrDefault(x => x.ForDelete || x.IsChanged) != null)
+            if ((Model.Test.IsQualityGroupChanged || Model.Test.TestUsers.FirstOrDefault(x => x.ForDelete || x.IsChangedForResultsDelete) != null)
                 && Model.Test.UsersWithResults.SelectMany(x => x.TestResults).Any()
                 && MessageBoxService.ShowMessage("Есть изменения в участниках и/или качествах для тестирования. Сохранение приведет к удалению результатов. Продолжить?", "", MessageButton.YesNoCancel, MessageIcon.Question) != MessageResult.Yes)
             {
@@ -218,7 +218,7 @@ namespace GOLite.ViewModels
                 return;
             }
 
-            Model.Test.UsersWithResults = new ObservableCollection<UserWithTestResults>(Model.Test.TestUsers.Select(x => new UserWithTestResults(x.TestUserID, x.UserName, x.Sort)
+            Model.Test.UsersWithResults = new ObservableCollection<UserWithTestResults>(Model.Test.TestUsers.OrderBy(x => x.Sort).Select(x => new UserWithTestResults(x.TestUserID, x.UserName, x.Sort)
             {
                 TestResults = new ObservableCollection<TestResult>(from tu in Model.Test.TestUsers
                                                                    from tq in Model.Test.TestQualities
@@ -255,7 +255,7 @@ namespace GOLite.ViewModels
                 }
 
                 string fileName = null;
-                SaveFileDialogService.DefaultFileName = $"{Model.Test.TestName}.docx";
+                SaveFileDialogService.DefaultFileName = $"{Model.Test.TestName} {DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}.docx";
                 SaveFileDialogService.Filter = "Word| *.docx";
                 if (SaveFileDialogService.ShowDialog())
                 {
@@ -312,7 +312,7 @@ namespace GOLite.ViewModels
             }
 
             string fileName = null;
-            SaveFileDialogService.DefaultFileName = $"{Model.Test.TestName}.docx";
+            SaveFileDialogService.DefaultFileName = $"{Model.Test.TestName} {DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}.docx";
             SaveFileDialogService.Filter = "Word| *.docx";
             if (SaveFileDialogService.ShowDialog())
             {

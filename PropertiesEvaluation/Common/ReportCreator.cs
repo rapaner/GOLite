@@ -265,6 +265,7 @@ namespace GOLite.Common
                 var user = new UserForReport()
                 {
                     UserID = test.TestUsers.FirstOrDefault(x => x.TestUserID == u.TestUserID).UserID,
+                    TestUserID = u.TestUserID,
                     UserName = u.UserName,
                     Sort = u.Sort,
                     Qualities = new ObservableCollection<TestQualityForReport>(test.TestQualities.Select(x => new TestQualityForReport(x.TestQualityID, qualities.FirstOrDefault(q => q.QualityID == x.QualityID).QualityForDisplay)
@@ -350,9 +351,12 @@ namespace GOLite.Common
             #endregion Создание новых пользователей с результатами, которые содержат оценку самого пользователя, а не как оценивал он
 
             //foreach (var uwr in test.UsersWithResults)
-            int count = 1;
-            foreach (var uwr in usersWithResults)
+            int pagesForUser = report.Pages.Count / usersWithResults.Count;
+            int count = pagesForUser;
+            //  Сортировку берем из основного списка
+            foreach (var u in users)
             {
+                var uwr = usersWithResults.FirstOrDefault(x => x.TestUserID == u.TestUserID);
                 var gc = GridControlCreator.Instance.CreateTestResultsGridControl(uwr, test, scale.Scores);
                 GridView gv = (GridView)gc.MainView;
                 XtraReport resultsReport = new XtraReport();
@@ -381,7 +385,7 @@ namespace GOLite.Common
                     cells[i].Font = new System.Drawing.Font("Tahoma", 8f);
                 }
 
-        ((XRTable)resultsReport.Bands[1].Controls[0]).WidthF = 820;
+            ((XRTable)resultsReport.Bands[1].Controls[0]).WidthF = 820;
                 ((XRTable)resultsReport.Bands[2].Controls[0]).WidthF = 820;
                 cells = ((XRTable)resultsReport.Bands[1].Controls[0]).Rows[0].Cells;
                 cells[0].Font = new System.Drawing.Font("Tahoma", 9f);
@@ -390,8 +394,8 @@ namespace GOLite.Common
 
                 subReport.CreateDocument();
                 //report.ModifyDocument(x => x.AddPages(subReport.Pages));
-                report.ModifyDocument(x => x.InsertPage((count * 2) - 1, subReport.Pages[0]));
-                count++;
+                report.ModifyDocument(x => x.InsertPage(count, subReport.Pages[0]));
+                count += pagesForUser + 1;
             }
 
             report.ExportToDocx(fileName);

@@ -201,7 +201,10 @@ namespace GOLite.Views
             if (!vm.Model.Test.UsersWithResults.SelectMany(x => x.TestResults).Any())
                 return null;
             var gc = GridControlCreator.Instance.CreateTestResultsGridControl(vm);
-            tlpResults.Controls.Add(gc, 0, 1);
+            if(gc != null)
+            {
+                tlpResults.Controls.Add(gc, 0, 1);
+            }
 
             return gc;
         }

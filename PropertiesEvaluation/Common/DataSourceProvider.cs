@@ -301,7 +301,7 @@ namespace GOLite.Common
                             context.QualityGroups.InsertOnSubmit(qgDB);
                             context.SubmitChanges();
 
-                            context.Qualities.InsertAllOnSubmit(qg.Qualities.Select(x => new Qualities()
+                            context.Qualities.InsertAllOnSubmit(qg.Qualities.Where(x => !x.ForDelete).Select(x => new Qualities()
                             {
                                 QualityGroupID = qgDB.ID,
                                 GoodQuality = x.GoodQuality,
@@ -495,7 +495,7 @@ namespace GOLite.Common
                                                    on scDB.ID equals sc.ScaleScoreID
                                                    where sc.ForDelete
                                                    select scDB).ToList();
-                            foreach(var ss in scoresForDelete)
+                            foreach (var ss in scoresForDelete)
                             {
                                 context.ExecuteCommandRaw($"DELETE FROM ScaleScores WHERE ID = {ss.ID}");
                             }
@@ -541,7 +541,7 @@ namespace GOLite.Common
                             context.Scales.InsertOnSubmit(sDB);
                             context.SubmitChanges();
 
-                            context.ScaleScores.InsertAllOnSubmit(s.Scores.Select(x => new ScaleScores()
+                            context.ScaleScores.InsertAllOnSubmit(s.Scores.Where(x => !x.ForDelete).Select(x => new ScaleScores()
                             {
                                 ScaleID = sDB.ID,
                                 Score = x.Score.Value,
@@ -1029,7 +1029,7 @@ namespace GOLite.Common
                         }
 
                         //  Если были изменения участников или качеств - удаляем все результаты
-                        if (test.TestUsers.FirstOrDefault(x => x.IsChanged || x.ForDelete) != null
+                        if (test.TestUsers.FirstOrDefault(x => x.IsChangedForResultsDelete || x.ForDelete) != null
                             || test.IsQualityGroupChanged
                             || test.DeleteTestResults)
                         {

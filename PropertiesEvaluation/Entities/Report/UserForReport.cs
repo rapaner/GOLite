@@ -14,6 +14,11 @@ namespace GOLite.Entities
         public int UserID { get; set; }
 
         /// <summary>
+        /// Код тестового пользователя
+        /// </summary>
+        public int TestUserID { get; set; }
+
+        /// <summary>
         /// Имя пользователя
         /// </summary>
         public string UserName { get; set; }
