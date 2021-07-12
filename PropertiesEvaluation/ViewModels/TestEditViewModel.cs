@@ -255,7 +255,7 @@ namespace GOLite.ViewModels
                 }
 
                 string fileName = null;
-                SaveFileDialogService.DefaultFileName = $"{Model.Test.TestName} {DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}.docx";
+                SaveFileDialogService.DefaultFileName = $"{Model.Test.TestName} {DateTime.Now.ToShortDateString().Replace('.', '-')} {DateTime.Now.ToShortTimeString().Replace(':', ' ')}.docx";
                 SaveFileDialogService.Filter = "Word| *.docx";
                 if (SaveFileDialogService.ShowDialog())
                 {
@@ -312,7 +312,7 @@ namespace GOLite.ViewModels
             }
 
             string fileName = null;
-            SaveFileDialogService.DefaultFileName = $"{Model.Test.TestName} {DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}.docx";
+            SaveFileDialogService.DefaultFileName = $"{Model.Test.TestName} {DateTime.Now.ToShortDateString().Replace('.', '-')} {DateTime.Now.ToShortTimeString().Replace(':', ' ')}.docx";
             SaveFileDialogService.Filter = "Word| *.docx";
             if (SaveFileDialogService.ShowDialog())
             {
