@@ -66,7 +66,7 @@ namespace GOLite.Reports
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(410F, 15F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(424F, 15F);
             // 
             // xrTableRow2
             // 
@@ -81,7 +81,7 @@ namespace GOLite.Reports
             // 
             this.xrTableCell4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[QualityID]")});
-            this.xrTableCell4.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell4.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StyleName = "DetailData3";
@@ -95,25 +95,25 @@ namespace GOLite.Reports
             // 
             this.xrTableCell5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[GoodQuality]")});
-            this.xrTableCell5.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell5.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StyleName = "DetailData3";
             this.xrTableCell5.StylePriority.UseFont = false;
             this.xrTableCell5.Text = "xrTableCell5";
-            this.xrTableCell5.Weight = 0.28461540602858909D;
+            this.xrTableCell5.Weight = 0.29538463122588243D;
             // 
             // xrTableCell6
             // 
             this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[BadQuality]")});
-            this.xrTableCell6.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.xrTableCell6.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StyleName = "DetailData3";
             this.xrTableCell6.StylePriority.UseFont = false;
             this.xrTableCell6.Text = "xrTableCell6";
-            this.xrTableCell6.Weight = 0.28461539585486317D;
+            this.xrTableCell6.Weight = 0.29538464451094743D;
             // 
             // TopMargin
             // 

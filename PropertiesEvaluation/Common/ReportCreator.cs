@@ -56,7 +56,7 @@ namespace GOLite.Common
             string scaleScores = scale.Scores
                 .OrderBy(x => x.Sort)
                 .Select(x => x.Score.ToString())
-                .Aggregate((prev, next) => $"{prev}  \"{next}\"")
+                .Aggregate((prev, next) => $"{prev}        \"{next}\"")
                 .Trim();
             report.xrlScaleScores.Text = scaleScores;
             ObservableCollection<Quality> qualitiesForReport = new ObservableCollection<Quality>();
@@ -153,7 +153,7 @@ namespace GOLite.Common
             string scaleScores = scale.Scores
                 .OrderBy(x => x.Sort)
                 .Select(x => x.Score.ToString())
-                .Aggregate((prev, next) => $"{prev}  \"{next}\"")
+                .Aggregate((prev, next) => $"{prev}          \"{next}\"")
                 .Trim();
             report.xrlScaleScores.Text = scaleScores;
             ObservableCollection<Quality> qualitiesForReport = new ObservableCollection<Quality>();
