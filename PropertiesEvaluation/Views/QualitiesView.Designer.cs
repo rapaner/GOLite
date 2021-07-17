@@ -77,6 +77,7 @@ namespace GOLite.Views
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
+            this.bbiCopyGroup = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qualitiesBindingSource)).BeginInit();
@@ -300,8 +301,9 @@ namespace GOLite.Views
             this.bbiAddQuality,
             this.bbiUpQuality,
             this.bbiDownQuality,
-            this.bbiDeleteQuality});
-            this.barManager1.MaxItemId = 10;
+            this.bbiDeleteQuality,
+            this.bbiCopyGroup});
+            this.barManager1.MaxItemId = 11;
             // 
             // bar1
             // 
@@ -313,6 +315,7 @@ namespace GOLite.Views
             this.bar1.FloatLocation = new System.Drawing.Point(79, 256);
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiAddGroup),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiCopyGroup),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiDeleteGroup)});
             this.bar1.OptionsBar.AllowQuickCustomization = false;
             this.bar1.OptionsBar.DrawDragBorder = false;
@@ -558,6 +561,14 @@ namespace GOLite.Views
             this.bar3.StandaloneBarDockControl = this.standaloneBarDockControl2;
             this.bar3.Text = "Custom 3";
             // 
+            // bbiCopyGroup
+            // 
+            this.bbiCopyGroup.Caption = "Копия списка";
+            this.bbiCopyGroup.Id = 10;
+            this.bbiCopyGroup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.bbiCopyGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.bbiCopyGroup.Name = "bbiCopyGroup";
+            // 
             // QualitiesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -650,5 +661,6 @@ namespace GOLite.Views
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraGrid.Columns.GridColumn colNumeration;
         private DevExpress.XtraGrid.Columns.GridColumn colSort;
+        private DevExpress.XtraBars.BarButtonItem bbiCopyGroup;
     }
 }

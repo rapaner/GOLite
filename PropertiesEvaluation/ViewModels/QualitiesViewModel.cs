@@ -28,6 +28,7 @@ namespace GOLite.ViewModels
         {
             this.RaiseCanExecuteChanged(vm => vm.DeleteQualityGroup());
             this.RaiseCanExecuteChanged(vm => vm.AddQuality());
+            this.RaiseCanExecuteChanged(vm => vm.CopyQualityGroup());
         }
 
         /// <summary>
@@ -143,6 +144,30 @@ namespace GOLite.ViewModels
         public void DeleteQualityGroup()
         {
             CurrentQualityGroup.ForDelete = !CurrentQualityGroup.ForDelete;
+        }
+
+        /// <summary>
+        /// Можно сделать копию группы качеств
+        /// </summary>
+        public bool CanCopyQualityGroup()
+        {
+            return CurrentQualityGroup != null;
+        }
+
+        /// <summary>
+        /// Сделать копию группы качеств
+        /// </summary>
+        public void CopyQualityGroup()
+        {
+            var newCopy = CurrentQualityGroup.DeepCopyByExpressionTree();
+            newCopy.Name = $"{newCopy.Name}-копия";
+            newCopy.QualityGroupID = 0;
+            foreach (var q in newCopy.Qualities)
+            {
+                q.QualityID = 0;
+            }
+            Model.QualityGroups.Add(newCopy);
+            this.RaisePropertiesChanged();
         }
 
         /// <summary>

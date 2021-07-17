@@ -36,6 +36,7 @@ namespace GOLite.Views
             //  Привязка кнопок
             fluentAPI.BindCommand(bbiSave, vm => vm.SaveQualityGroups());
             fluentAPI.BindCommand(bbiAddGroup, vm => vm.AddQualityGroup());
+            fluentAPI.BindCommand(bbiCopyGroup, vm => vm.CopyQualityGroup());
             fluentAPI.BindCommand(bbiDeleteGroup, vm => vm.DeleteQualityGroup());
             fluentAPI.BindCommand(bbiAddQuality, vm => vm.AddQuality());
             fluentAPI.BindCommand(bbiUpQuality, vm => vm.UpQuality());
