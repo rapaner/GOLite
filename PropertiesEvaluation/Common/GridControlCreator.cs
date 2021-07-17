@@ -159,6 +159,20 @@ namespace GOLite.Common
                   catch { }
               };
 
+            gv.CustomDrawCell += (o, e) =>
+              {
+                  if (e.Column.Tag != null && e.Column.Tag is int)
+                  {
+                      int colNum = (int)e.Column.Tag;
+                      if (colNum % 5 == 0)
+                      {
+                          GridCellDrawing.DoDefaultDrawCell(gv, e);
+                          GridCellDrawing.DrawCellBorder(e);
+                          e.Handled = true;
+                      }
+                  }
+              };
+
             Messenger.Default.Register<GridResultsMessage>(gv, "ResultsGrid", (grm) =>
             {
                 try

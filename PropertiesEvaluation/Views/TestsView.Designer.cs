@@ -85,7 +85,7 @@ namespace GOLite.Views
             // 
             // bbiNewTest
             // 
-            this.bbiNewTest.Caption = "Создать тест";
+            this.bbiNewTest.Caption = "Создать группу";
             this.bbiNewTest.Id = 2;
             this.bbiNewTest.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiNewTest.ImageOptions.Image")));
             this.bbiNewTest.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiNewTest.ImageOptions.LargeImage")));
@@ -93,7 +93,7 @@ namespace GOLite.Views
             // 
             // bbiOpenTest
             // 
-            this.bbiOpenTest.Caption = "Открыть тест";
+            this.bbiOpenTest.Caption = "Открыть группу";
             this.bbiOpenTest.Id = 3;
             this.bbiOpenTest.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiOpenTest.ImageOptions.Image")));
             this.bbiOpenTest.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiOpenTest.ImageOptions.LargeImage")));
@@ -119,7 +119,7 @@ namespace GOLite.Views
             this.ribbonPageGroup1,
             this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Тесты";
+            this.ribbonPage1.Text = "Группы";
             // 
             // ribbonPageGroup1
             // 

@@ -545,9 +545,13 @@ namespace GOLite.Views
             // 
             // colNumeration
             // 
+            this.colNumeration.AppearanceCell.BorderColor = System.Drawing.Color.Black;
+            this.colNumeration.AppearanceCell.Options.UseBorderColor = true;
             this.colNumeration.Caption = "№";
             this.colNumeration.FieldName = "colNumeration";
             this.colNumeration.Name = "colNumeration";
+            this.colNumeration.OptionsColumn.AllowEdit = false;
+            this.colNumeration.OptionsColumn.ReadOnly = true;
             this.colNumeration.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colNumeration.Visible = true;
             this.colNumeration.VisibleIndex = 0;

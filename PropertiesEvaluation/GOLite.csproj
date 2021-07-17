@@ -200,6 +200,7 @@
     <Compile Include="Common\ClassExtensions.cs" />
     <Compile Include="Common\CommonViewModel.cs" />
     <Compile Include="Common\DataSourceProvider.cs" />
+    <Compile Include="Common\GridCellDrawing.cs" />
     <Compile Include="Common\GridControlCreator.cs" />
     <Compile Include="Common\PropertiesEvaluation.cs">
       <DependentUpon>PropertiesEvaluation.dbml</DependentUpon>
