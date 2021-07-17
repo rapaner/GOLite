@@ -55,7 +55,7 @@ namespace GOLite.Reports
             this.xrBlankForResults,
             this.xrPanel2,
             this.xrPanel1});
-            this.Detail.HeightF = 1016.917F;
+            this.Detail.HeightF = 1016.918F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.SnapLinePadding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -87,9 +87,10 @@ namespace GOLite.Reports
             // xrBlankForResults
             // 
             this.xrBlankForResults.CanShrink = true;
-            this.xrBlankForResults.LocationFloat = new DevExpress.Utils.PointFloat(0.0002622604F, 640.7083F);
+            this.xrBlankForResults.LocationFloat = new DevExpress.Utils.PointFloat(0F, 640.71F);
             this.xrBlankForResults.Name = "xrBlankForResults";
-            this.xrBlankForResults.SizeF = new System.Drawing.SizeF(847.9997F, 376.2084F);
+            this.xrBlankForResults.SizeF = new System.Drawing.SizeF(829F, 376.2084F);
+            this.xrBlankForResults.SnapLineMargin = new DevExpress.XtraPrinting.PaddingInfo(3, 3, 3, 3, 100F);
             // 
             // xrPanel2
             // 
@@ -135,7 +136,7 @@ namespace GOLite.Reports
             // 
             // xrrtInfo
             // 
-            this.xrrtInfo.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrrtInfo.Font = new System.Drawing.Font("Times New Roman", 11F);
             this.xrrtInfo.LocationFloat = new DevExpress.Utils.PointFloat(26.04165F, 24.95832F);
             this.xrrtInfo.Name = "xrrtInfo";
             this.xrrtInfo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);

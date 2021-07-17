@@ -81,7 +81,7 @@ namespace GOLite.Reports
             // 
             this.xrTableCell4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[QualityID]")});
-            this.xrTableCell4.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrTableCell4.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StyleName = "DetailData3";
@@ -95,7 +95,7 @@ namespace GOLite.Reports
             // 
             this.xrTableCell5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[GoodQuality]")});
-            this.xrTableCell5.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrTableCell5.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StyleName = "DetailData3";
@@ -107,7 +107,7 @@ namespace GOLite.Reports
             // 
             this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[BadQuality]")});
-            this.xrTableCell6.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrTableCell6.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StyleName = "DetailData3";

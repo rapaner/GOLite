@@ -364,22 +364,39 @@ namespace GOLite.Common
                 Visible = true,
                 Width = 100
             };
-            colTestUserID.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            colTestUserID.AppearanceHeader.Options.UseTextOptions = true;
+            colTestUserID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             colTestUserID.OptionsColumn.ReadOnly = true;
             colTestUserID.OptionsColumn.AllowEdit = false;
             gv.Columns.Add(colTestUserID);
 
             foreach (var q in qualities)
             {
-                GridColumn col = new GridColumn()
+                GridColumn col;
+                if (q.Sort < 10)
                 {
-                    Caption = q.Sort.ToString(),
-                    FieldName = $"TestQuality{q.Sort}",
-                    Visible = true,
-                    Tag = q.TestQualityID,
-                    Width = 38
-                };
-                gv.Columns.Add(col);
+                    col = new GridColumn()
+                    {
+                        Caption = q.Sort.ToString(),
+                        FieldName = $"TestQuality{q.Sort}",
+                        Visible = true,
+                        Tag = q.TestQualityID,
+                        Width = 28
+                    };
+                    gv.Columns.Add(col);
+                }
+                else
+                {
+                    col = new GridColumn()
+                    {
+                        Caption = q.Sort.ToString(),
+                        FieldName = $"TestQuality{q.Sort}",
+                        Visible = true,
+                        Tag = q.TestQualityID,
+                        Width = 38
+                    };
+                    gv.Columns.Add(col);
+                }
             }
 
             GridControl gc = new GridControl();
