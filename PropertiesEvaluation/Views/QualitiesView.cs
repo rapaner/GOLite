@@ -119,7 +119,6 @@ namespace GOLite.Views
                 .After(() =>
                 {
                     gvQualities.RefreshData();
-                    gvQualities.FocusedRowHandle++;
                 });
             fluentAPI.WithCommand(vm => vm.DeleteQuality())
                 .After(() =>

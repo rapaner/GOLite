@@ -376,7 +376,7 @@ namespace GOLite.Common
                 for (int i = 1; i < cells.Count; i++)
                 {
                     cells[i].WidthF = 5;
-                    cells[i].Font = new System.Drawing.Font("Tahoma", 8f);
+                    cells[i].Font = new System.Drawing.Font("Arial Narrow", 8f);
                 }
                 //cells[0].WidthF = 126;
                 //cells[0].Font = new System.Drawing.Font("Tahoma", 8);
@@ -384,15 +384,15 @@ namespace GOLite.Common
                 for (int i = 1; i < cells.Count; i++)
                 {
                     cells[i].WidthF = 5;
-                    cells[i].Font = new System.Drawing.Font("Tahoma", 8f);
+                    cells[i].Font = new System.Drawing.Font("Arial Narrow", 8f);
                 }
 
             ((XRTable)resultsReport.Bands[1].Controls[0]).WidthF = 820;
                 ((XRTable)resultsReport.Bands[2].Controls[0]).WidthF = 820;
                 cells = ((XRTable)resultsReport.Bands[1].Controls[0]).Rows[0].Cells;
-                cells[0].Font = new System.Drawing.Font("Tahoma", 9f);
+                cells[0].Font = new System.Drawing.Font("Arial Narrow", 9f);
                 cells = ((XRTable)resultsReport.Bands[2].Controls[0]).Rows[0].Cells;
-                cells[0].Font = new System.Drawing.Font("Tahoma", 9f);
+                cells[0].Font = new System.Drawing.Font("Arial Narrow", 9f);
 
                 subReport.CreateDocument();
                 //report.ModifyDocument(x => x.AddPages(subReport.Pages));

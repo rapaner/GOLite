@@ -221,7 +221,7 @@ namespace GOLite.ViewModels
         public bool CanDownScore()
         {
             return CurrentScore != null
-                && CurrentScore.Sort < CurrentScale.Scores.Count - 1;
+                && CurrentScore.Sort < CurrentScale.Scores.Count;
         }
 
         /// <summary>

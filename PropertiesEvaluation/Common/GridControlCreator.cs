@@ -111,7 +111,7 @@ namespace GOLite.Common
                     FieldName = $"TestQuality{q.Sort}",
                     ColumnEdit = rilueScaleScores,
                     Visible = true,
-                    Tag = q.TestQualityID,
+                    Tag = q,
                     Width = 38
                 };
                 gv.Columns.Add(col);
@@ -131,7 +131,7 @@ namespace GOLite.Common
             {
                 if (e.Column == colTestUserID)
                     return;
-                int testQualityID = (int)e.Column.Tag;
+                int testQualityID = ((TestQuality)e.Column.Tag).TestQualityID;
                 int userID = (int)dt.Rows[e.RowHandle]["UserID"];
                 var testResult = user.TestResults.FirstOrDefault(x => x.UserID == userID && x.TestQualityID == testQualityID);
                 if (testResult is null)
@@ -161,9 +161,9 @@ namespace GOLite.Common
 
             gv.CustomDrawCell += (o, e) =>
               {
-                  if (e.Column.Tag != null && e.Column.Tag is int)
+                  if (e.Column.Tag != null && e.Column.Tag is TestQuality)
                   {
-                      int colNum = (int)e.Column.Tag;
+                      int colNum = ((TestQuality)e.Column.Tag).Sort;
                       if (colNum % 5 == 0)
                       {
                           GridCellDrawing.DoDefaultDrawCell(gv, e);
